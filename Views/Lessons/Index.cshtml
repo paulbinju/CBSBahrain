@@ -1,0 +1,103 @@
+﻿@model IEnumerable<CBSBahrainMVC.Models.Lesson>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+
+                <a href="@Url.Content("~/Lessons/Create")" class="pull-right btn btn-info">Create New</a>
+                <h4 class="page-title">Lessons</h4>
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-body">
+
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Class)
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Title)
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.FileAttachment)
+                                                                    </th>
+
+                                                                    <th>Modify</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach (var item in Model)
+                                                                {
+                                                                <tr>
+                                                                    <td>
+                                                                        @Html.DisplayFor(modelItem => item.Class.ClassName)
+                                                                    </td>
+                                                                    <td>
+                                                                        @Html.DisplayFor(modelItem => item.Title)
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="@Url.Content("~/LessonFiles/"+ item.FileAttachment)" target="_blank">
+                                                                            @Html.DisplayFor(modelItem => item.FileAttachment)
+                                                                        </a>
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <a asp-action="Edit" asp-route-id="@item.LessonId">Edit</a> |
+                                                                        <a asp-action="Delete" asp-route-id="@item.LessonId">Delete</a>
+                                                                    </td>
+                                                                </tr>
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div> <!-- end row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+
+
+
+            </div><!-- container -->
+
+        </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+
+
+
+</div>

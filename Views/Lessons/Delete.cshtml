@@ -1,0 +1,88 @@
+﻿@model CBSBahrainMVC.Models.Lesson
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h3>Are you sure you want to delete this?</h3>
+
+
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+
+        <div class="page-header-title">
+
+            <div class="pull-right">
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="LessonId" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />  <a asp-action="Index" class="btn btn-warning">Back </a>
+                </form>
+            </div>
+
+            <h4 class="page-title">Lesson</h4>
+        </div>
+
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-body">
+                                                <dl class="dl-horizontal">
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.Title)
+                                                    </dt>
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.Title)
+                                                    </dd>
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.FileAttachment)
+                                                    </dt>
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.FileAttachment)
+                                                    </dd>
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.Class)
+                                                    </dt>
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.Class.ClassName)
+                                                    </dd>
+                                                </dl>
+
+                                 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div> <!-- end row -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+
+
+
+        </div><!-- container -->
+
+    </div> <!-- Page content Wrapper -->
+
+</div> <!-- content -->
+</div>

@@ -1,0 +1,95 @@
+﻿@model CBSBahrainMVC.Models.SongBank
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+ 
+
+
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+
+                <button class="btn btn-warning pull-right" onclick="window.history.back()">Back</button>
+                <h4 class="page-title">Song</h4>
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-body">
+
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <h3> @Html.DisplayFor(model => model.Title)</h3>
+                                                        <br />
+                                                        <b>Category:</b> @Model.Category.Category1
+                                                        <br />
+                                                        @if (Model.YoutubeUrl != null || Model.YoutubeUrl == "")
+                                                        {
+                                                            <b>Youtube URL :</b> @Html.DisplayFor(model => model.YoutubeUrl)
+
+                                                            <br />
+                                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/@Model.YoutubeUrl.Replace("https://www.youtube.com/watch?v=", "")" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                            <br />
+                                                            <br />
+                                                        }
+                                                        else
+                                                        {
+                                                            <b>Youtube URL : Not added</b>
+                                                        }
+
+                                                        <br style="clear:both" /><br />
+                                                        <b>Lyrics</b><br />
+                                                        @Html.Raw(Model.Lyrics)
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div> <!-- end row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+
+
+
+            </div><!-- container -->
+
+        </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+
+
+
+</div>
+
+
+
+
+

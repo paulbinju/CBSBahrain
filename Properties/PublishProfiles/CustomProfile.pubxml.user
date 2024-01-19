@@ -1,0 +1,1640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQbXSCo0/UEilbg1evY+OAAAAAAACAAAAAAAQZgAAAAEAACAAAADh8WXd4XoscbB6t3+3hiv6hUFs117XGSSN0iinylzL2gAAAAAOgAAAAAIAACAAAABS63A+2vilOiOtMVpJm9y4sC4+qocD1bAbbO3G8J/9pjAAAAAeoG9mi6naRDYp9sAupZRb8bFxndhhy8YmtrhhSLabV/4IsuH3axCta2+/2FyHugRAAAAAkkeyb7kKpYX61yvU6IqpXrucIjtJaSzclDXXPTZzTZtJFzJjTuVot6/HVYzmvP6cAiAd2AD6wGwrSm0+XehCuQ==</EncryptedPassword>
+    <_PublishTargetUrl>ftp://ftp.site4now.net/site1</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>02/21/2020 15:12:50</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>05/10/2020 23:27:49</publishTime>
+    </File>
+    <File Include="CBSBahrainMVC.deps.json">
+      <publishTime>05/11/2020 10:05:27</publishTime>
+    </File>
+    <File Include="CBSBahrainMVC.dll">
+      <publishTime>05/11/2020 10:05:11</publishTime>
+    </File>
+    <File Include="CBSBahrainMVC.exe">
+      <publishTime>05/11/2020 10:05:11</publishTime>
+    </File>
+    <File Include="CBSBahrainMVC.pdb">
+      <publishTime>05/11/2020 10:05:11</publishTime>
+    </File>
+    <File Include="CBSBahrainMVC.runtimeconfig.json">
+      <publishTime>03/28/2020 21:30:26</publishTime>
+    </File>
+    <File Include="CBSBahrainMVC.Views.dll">
+      <publishTime>05/11/2020 10:05:15</publishTime>
+    </File>
+    <File Include="CBSBahrainMVC.Views.pdb">
+      <publishTime>05/11/2020 10:05:15</publishTime>
+    </File>
+    <File Include="cs/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="cs/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>08/14/2019 23:20:00</publishTime>
+    </File>
+    <File Include="cs/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="de/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="de/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>08/14/2019 23:20:00</publishTime>
+    </File>
+    <File Include="de/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>09/20/2019 22:26:20</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>08/14/2019 23:20:00</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>08/14/2019 23:20:00</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>08/14/2019 23:20:00</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>08/14/2019 23:20:00</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="ko/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="ko/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>08/14/2019 23:20:00</publishTime>
+    </File>
+    <File Include="ko/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Razor.Language.dll">
+      <publishTime>09/14/2019 21:02:58</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>08/14/2019 23:21:22</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>08/14/2019 23:21:30</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Razor.dll">
+      <publishTime>09/14/2019 21:03:02</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>08/14/2019 23:20:50</publishTime>
+    </File>
+    <File Include="Microsoft.Data.SqlClient.dll">
+      <publishTime>06/09/2019 00:20:12</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <publishTime>09/14/2019 04:11:02</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.dll">
+      <publishTime>09/14/2019 04:11:22</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Relational.dll">
+      <publishTime>09/14/2019 04:11:26</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.SqlServer.dll">
+      <publishTime>09/14/2019 04:11:30</publishTime>
+    </File>
+    <File Include="Microsoft.Identity.Client.dll">
+      <publishTime>04/29/2019 22:04:14</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
+      <publishTime>09/20/2019 22:25:44</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
+      <publishTime>09/20/2019 22:25:48</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
+      <publishTime>09/20/2019 22:25:52</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
+      <publishTime>09/20/2019 22:25:52</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
+      <publishTime>09/20/2019 22:25:46</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
+      <publishTime>09/20/2019 22:25:46</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
+      <publishTime>09/20/2019 22:25:54</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.dll">
+      <publishTime>03/24/2018 17:44:14</publishTime>
+    </File>
+    <File Include="NuGet.Frameworks.dll">
+      <publishTime>04/24/2018 21:27:10</publishTime>
+    </File>
+    <File Include="pl/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="pl/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>08/14/2019 23:20:00</publishTime>
+    </File>
+    <File Include="pl/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>08/14/2019 23:20:02</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll">
+      <publishTime>05/15/2018 13:29:40</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll">
+      <publishTime>06/09/2019 00:20:18</publishTime>
+    </File>
+    <File Include="runtimes/win-arm64/native/sni.dll">
+      <publishTime>07/12/2017 11:24:24</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/sni.dll">
+      <publishTime>12/07/2017 11:24:22</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/sni.dll">
+      <publishTime>12/07/2017 11:24:22</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll">
+      <publishTime>05/15/2018 13:29:40</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll">
+      <publishTime>06/09/2019 00:20:20</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>05/15/2018 13:29:44</publishTime>
+    </File>
+    <File Include="System.Composition.AttributedModel.dll">
+      <publishTime>05/11/2016 04:55:42</publishTime>
+    </File>
+    <File Include="System.Composition.Convention.dll">
+      <publishTime>05/11/2016 04:55:42</publishTime>
+    </File>
+    <File Include="System.Composition.Hosting.dll">
+      <publishTime>05/11/2016 04:55:42</publishTime>
+    </File>
+    <File Include="System.Composition.Runtime.dll">
+      <publishTime>05/11/2016 04:55:44</publishTime>
+    </File>
+    <File Include="System.Composition.TypedParts.dll">
+      <publishTime>05/11/2016 04:55:46</publishTime>
+    </File>
+    <File Include="System.Configuration.ConfigurationManager.dll">
+      <publishTime>05/15/2018 13:29:38</publishTime>
+    </File>
+    <File Include="System.Runtime.Caching.dll">
+      <publishTime>05/15/2018 13:29:40</publishTime>
+    </File>
+    <File Include="System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>05/15/2018 13:29:44</publishTime>
+    </File>
+    <File Include="tr/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>08/14/2019 23:21:24</publishTime>
+    </File>
+    <File Include="tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:21:32</publishTime>
+    </File>
+    <File Include="tr/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>08/14/2019 23:20:02</publishTime>
+    </File>
+    <File Include="tr/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>08/14/2019 23:20:54</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>05/11/2020 10:05:27</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/bootstrap.min.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/elements.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/icons.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/style.css">
+      <publishTime>03/02/2020 18:09:10</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/variables.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/_components.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/_core.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/_menu.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/_pages.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/_responsive.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/fontawesome-webfont.eot">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/fontawesome-webfont.svg">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/fontawesome-webfont.ttf">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/fontawesome-webfont.woff">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/fontawesome-webfont.woff2">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/FontAwesome.otf">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/ionicons.eot">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/ionicons.svg">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/ionicons.ttf">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/ionicons.woff">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/materialdesignicons-webfont.eot">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/materialdesignicons-webfont.svg">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/materialdesignicons-webfont.ttf">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/materialdesignicons-webfont.woff">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/materialdesignicons-webfont.woff2">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/themify.eot">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/themify.svg">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/themify.ttf">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fonts/themify.woff">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/css/materialdesignicons.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/css/themify-icons.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/css/font-awesome.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/css/mixins.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/css/variables.css">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/fonts/fontawesome-webfont.eot">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/fonts/fontawesome-webfont.svg">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/fonts/fontawesome-webfont.ttf">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/fonts/fontawesome-webfont.woff">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/fonts/fontawesome-webfont.woff2">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/fonts/FontAwesome.otf">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/animated.less">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/bordered-pulled.less">
+      <publishTime>01/31/2018 08:52:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/core.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/fixed-width.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/font-awesome.less">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/icons.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/larger.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/list.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/mixins.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/path.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/rotated-flipped.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/screen-reader.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/stacked.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/font-awesome/less/variables.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/css/ionicons.css">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/css/ionicons.min.css">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/css/_ionicons-variables.css">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/fonts/ionicons.eot">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/fonts/ionicons.svg">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/fonts/ionicons.ttf">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/fonts/ionicons.woff">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/less/ionicons.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/less/_ionicons-animation.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/less/_ionicons-font.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/less/_ionicons-icons.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/less/_ionicons-variables.less">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/alert-circled.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/alert.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-add-contact.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-add.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-alarm.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-archive.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-arrow-back.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-arrow-down-left.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-arrow-down-right.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-arrow-up-left.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-arrow-up-right.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-battery.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-book.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-calendar.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-call.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-camera.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-chat.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-checkmark.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-clock.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-close.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-contact.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-contacts.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-data.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-developer.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-display.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-download.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-dropdown.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-earth.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-folder.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-forums.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-friends.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-hand.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-image.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-inbox.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-information.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-keypad.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-lightbulb.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-locate.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-location.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-mail.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-microphone.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-mixer.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-more.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-note.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-playstore.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-printer.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-promotion.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-reminder.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-remove.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-search.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-send.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-settings.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-share.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-social-user.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-social.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-sort.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-star.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-stopwatch.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-storage.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-system-back.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-system-home.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-system-windows.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-timer.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-trash.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-volume.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/android-wifi.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/archive.png">
+      <publishTime>01/31/2018 08:52:16</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-down-a.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-down-b.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-down-c.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-expand.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-graph-down-left.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-graph-down-right.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-graph-up-left.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-graph-up-right.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-left-a.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-left-b.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-left-c.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-move.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-resize.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-return-left.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-return-right.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-right-a.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-right-b.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-right-c.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-shrink.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-swap.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-up-a.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-up-b.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/arrow-up-c.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/at.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/bag.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/battery-charging.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/battery-empty.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/battery-full.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/battery-half.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/battery-low.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/beaker.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/beer.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/bluetooth.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/bookmark.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/briefcase.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/bug.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/calculator.png">
+      <publishTime>01/31/2018 08:52:18</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/calendar.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/camera.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/card.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/chatbox-working.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/chatbox.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/chatboxes.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/chatbubble-working.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/chatbubble.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/chatbubbles.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/checkmark-circled.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/checkmark-round.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/checkmark.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/chevron-down.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/chevron-left.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/chevron-right.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/chevron-up.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/clipboard.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/clock.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/close-circled.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/close-round.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/close.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/cloud.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/code-download.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/code-working.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/code.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/coffee.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/compass.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/compose.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/connection-bars.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/contrast.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/disc.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/document-text.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/document.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/drag.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/earth.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/edit.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/egg.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/eject.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/email.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/eye-disabled.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/eye.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/female.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/filing.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/film-marker.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/flag.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/flash-off.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/flash.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/flask.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/folder.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/fork-repo.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/fork.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/forward.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/game-controller-a.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/game-controller-b.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/gear-a.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/gear-b.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/grid.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/hammer.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/headphone.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/heart.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/help-buoy.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/help-circled.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/help.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/home.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/icecream.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/icon-social-google-plus-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/icon-social-google-plus.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/image.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/images.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/information-circled.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/information.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ionic.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-alarm-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-alarm.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-albums-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-albums.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-arrow-back.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-arrow-down.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-arrow-forward.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-arrow-left.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-arrow-right.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-arrow-thin-down.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-arrow-thin-left.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-arrow-thin-right.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-arrow-thin-up.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-arrow-up.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-at-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-at.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-bell-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-bell.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-bolt-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-bolt.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-bookmarks-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-bookmarks.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-box-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-box.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-briefcase-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-briefcase.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-browsers-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-browsers.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-calculator-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-calculator.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-calendar-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-calendar.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-camera-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-camera.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cart-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cart.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-chatboxes-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-chatboxes.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-chatbubble-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-chatbubble.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-checkmark-empty.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-checkmark-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-checkmark.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-circle-filled.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-circle-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-clock-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-clock.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-close-empty.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-close-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-close.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cloud-download-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cloud-download.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cloud-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cloud-upload-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cloud-upload.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cloud.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cloudy-night-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cloudy-night.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cloudy-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cloudy.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cog-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-cog.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-compose-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-compose.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-contact-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-contact.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-copy-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-copy.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-download-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-download.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-drag.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-email-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-email.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-eye-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-eye.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-fastforward-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-fastforward.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-filing-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-filing.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-film-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-film.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-flag-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-flag.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-folder-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-folder.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-gear-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-gear.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-glasses-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-glasses.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-heart-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-heart.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-help-empty.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-help-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-help.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-infinite-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-infinite.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-information-empty.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-information-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-information.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-ionic-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-keypad-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-keypad.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-lightbulb-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-lightbulb.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-location-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-location.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-locked-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-locked.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-medkit-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-medkit.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-mic-off.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-mic-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-mic.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-minus-empty.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-minus-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-minus.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-monitor-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-monitor.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-moon-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-moon.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-more-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-more.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-musical-note.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-musical-notes.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-navigate-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-navigate.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-paperplane-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-paperplane.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-partlysunny-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-partlysunny.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-pause-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-pause.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-people-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-people.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-person-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-person.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-personadd-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-personadd.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-photos-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-photos.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-pie-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-pie.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-play-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-play.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-plus-empty.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-plus-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-plus.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-pricetag-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-pricetag.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-printer-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-printer.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-rainy-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-rainy.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-recording-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-recording.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-redo-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-redo.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-refresh-empty.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-refresh-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-refresh.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-reload.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-rewind-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-rewind.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-search-strong.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-search.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-skipbackward-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-skipbackward.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-skipforward-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-skipforward.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-snowy.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-speedometer-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-speedometer.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-star-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-star.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-stopwatch-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-stopwatch.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-sunny-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-sunny.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-telephone-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-telephone.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-thunderstorm-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-thunderstorm.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-time-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-time.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-timer-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-timer.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-trash-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-trash.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-undo-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-undo.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-unlocked-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-unlocked.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-upload-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-upload.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-videocam-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-videocam.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-volume-high.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-volume-low.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-wineglass-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-wineglass.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-world-outline.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/icons/ionicons/png/512/ios7-world.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>02/24/2020 10:29:18</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<CBSBahrainMVC.Models.Notification>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+
+              
+                <h4 class="page-title">Notification</h4>
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-body">
+
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <p style="font-size:11px;margin-left:10px;">
+                                                           Note: If you wants to remove the Notification from the App, edit and keep the text empty!
+                                                        </p>
+
+
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Notification</th>
+                                                                    <th>Modify</th>
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach (var item in Model)
+                                                                {
+                                                                    <tr>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.Text)
+                                                                        </td>
+                                                                        <td>
+                                                                            <a asp-action="Edit" asp-route-id="@item.NotificationId">Edit</a> 
+                                                                            
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div> <!-- end row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+
+
+
+            </div><!-- container -->
+
+        </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+
+
+
+</div>

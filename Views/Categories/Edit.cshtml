@@ -1,0 +1,74 @@
+﻿@model CBSBahrainMVC.Models.Category
+ 
+
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+
+
+                <h4 class="page-title">Edit Category</h4>
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-body">
+
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <form asp-action="Edit">
+                                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                            <input type="hidden" asp-for="CategoryId" />
+                                                            <div class="form-group">
+                                                                <label class="control-label">Category</label>
+                                                                <input asp-for="Category1" class="form-control" required />
+                                                                <span asp-validation-for="Category1" class="text-danger"></span>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="submit" value="Save" class="btn btn-success" />
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div> <!-- end row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+
+
+
+            </div><!-- container -->
+
+        </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+
+
+
+</div>

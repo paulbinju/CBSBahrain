@@ -1,0 +1,83 @@
+﻿@model CBSBahrainMVC.Models.Lesson
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+
+
+                <h4 class="page-title">Create Lesson</h4>
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <form asp-action="Create" enctype="multipart/form-data">
+                                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                            <div class="form-group">
+                                                                <label  class="control-label">Class Name</label>
+                                                                <select asp-for="ClassId" class="form-control" asp-items="ViewBag.ClassId"></select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label asp-for="Title" class="control-label"></label>
+                                                                <input asp-for="Title" class="form-control" />
+                                                                <span asp-validation-for="Title" class="text-danger"></span>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label asp-for="FileAttachment" class="control-label"></label>
+                                                                <input asp-for="FileAttachment" class="form-control" type="file" />
+                                                                <span asp-validation-for="FileAttachment" class="text-danger"></span>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="submit" value="Create" class="btn btn-success" />
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end row -->
+
+
+
+
+                            </div><!-- container -->
+
+                        </div> <!-- Page content Wrapper -->
+
+                    </div> <!-- content -->
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

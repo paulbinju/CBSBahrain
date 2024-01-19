@@ -1,0 +1,94 @@
+﻿@model IEnumerable<CBSBahrainMVC.Models.ClassStd>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+
+                <a href="@Url.Content("~/ClassStds/Create")" class="pull-right btn btn-info">Create New</a>
+                <h4 class="page-title">Classes</h4>
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-body">
+
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <p style="font-size:11px;margin-left:10px;">
+                                                            Note: Create class in the order you wants it to appear in the App.
+                                                        </p>
+
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        Class Name
+                                                                    </th>
+                                                                    <th>Modify</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach (var item in Model)
+                                                                {
+                                                                    <tr>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.ClassName)
+                                                                        </td>
+                                                                        <td>
+                                                                            <a asp-action="Edit" asp-route-id="@item.ClassId">Edit</a> |
+
+                                                                            <a asp-action="Delete" asp-route-id="@item.ClassId">Delete</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div> <!-- end row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+
+
+
+            </div><!-- container -->
+
+        </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+
+
+
+</div>
+

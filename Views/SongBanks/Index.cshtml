@@ -1,0 +1,103 @@
+﻿@model IEnumerable<CBSBahrainMVC.Models.SongBank>
+
+ 
+
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+
+                <a href="@Url.Content("~/SongBanks/Create")" class="pull-right btn btn-info">Create New</a>
+                <h4 class="page-title">Songs</h4>
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-body">
+
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Category)
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Title)
+                                                                    </th>
+                                                                    <th>File Attachment</th>
+                                                                   
+                                                                    <th>Modify</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach (var item in Model)
+                                                                {
+                                                                <tr>
+                                                                    <td>
+                                                                        @Html.DisplayFor(modelItem => item.Category.Category1)
+                                                                    </td>
+                                                                    <td>
+                                                                        @Html.DisplayFor(modelItem => item.Title)
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="@Url.Content("~/SongFiles/"+item.FileAttachment)" target="_blank">
+                                                                            @Html.DisplayFor(modelItem => item.FileAttachment)
+                                                                        </a>
+                                                                    </td>
+
+
+                                                                    <td>
+                                                                        <a asp-action="Edit" asp-route-id="@item.SongId">Edit</a> |
+                                                                        <a asp-action="Details" asp-route-id="@item.SongId">Details</a> |
+                                                                        <a asp-action="Delete" asp-route-id="@item.SongId">Delete</a>
+                                                                    </td>
+                                                                </tr>
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div> <!-- end row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+
+
+
+            </div><!-- container -->
+
+        </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+
+
+
+</div>

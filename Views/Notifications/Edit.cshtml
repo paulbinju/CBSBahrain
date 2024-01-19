@@ -1,0 +1,62 @@
+﻿@model CBSBahrainMVC.Models.Notification
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+
+
+                <h4 class="page-title">Edit Notification</h4>
+               
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form asp-action="Edit">
+                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                            <input type="hidden" asp-for="NotificationId" />
+                                            <div class="form-group">
+                                                <label asp-for="Text" class="control-label"></label>
+                                                <input asp-for="Text" class="form-control"  />
+                                                <span asp-validation-for="Text" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" value="Save" class="btn btn-danger" />
+                                                &nbsp;&nbsp;
+                                                <a asp-action="Index" class="btn btn-warning "> Cancel </a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+
+
+
+            </div><!-- container -->
+
+        </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+
+
+
+</div>
