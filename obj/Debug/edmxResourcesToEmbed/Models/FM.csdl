@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FleetManagerV2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Alert_T">
+    <Key>
+      <PropertyRef Name="AlertID" />
+    </Key>
+    <Property Name="AlertID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="Alert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DueDate" Type="DateTime" Precision="0" />
+    <Property Name="DOC" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="AutoBrand_T">
+    <Key>
+      <PropertyRef Name="AutoBrandID" />
+    </Key>
+    <Property Name="AutoBrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="Make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Bill_T">
+    <Key>
+      <PropertyRef Name="BillID" />
+    </Key>
+    <Property Name="BillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="BillNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BillDate" Type="DateTime" Precision="0" />
+    <Property Name="ShopID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="DOC" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Call_T">
+    <Key>
+      <PropertyRef Name="CallID" />
+    </Key>
+    <Property Name="CallID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="FMUserID" Type="Int32" />
+    <Property Name="JobCardGenerated" Type="Boolean" />
+    <Property Name="ReportedOn" Type="DateTime" Precision="0" />
+    <Property Name="StartedOn" Type="DateTime" Precision="0" />
+    <Property Name="CompletedOn" Type="DateTime" Precision="0" />
+    <Property Name="ExternalGarage" Type="Boolean" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Department_T">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="Department" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Division_T">
+    <Key>
+      <PropertyRef Name="DivisionID" />
+    </Key>
+    <Property Name="DivisionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="Division" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FleetCompany_T">
+    <Key>
+      <PropertyRef Name="FleetCompanyID" />
+    </Key>
+    <Property Name="FleetCompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Activated" Type="Boolean" />
+    <Property Name="SPID" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="FMUser_T">
+    <Key>
+      <PropertyRef Name="FMUserID" />
+    </Key>
+    <Property Name="FMUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FMPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="DivisionID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FuelConsumption_T">
+    <Key>
+      <PropertyRef Name="FuelConsumptionID" />
+    </Key>
+    <Property Name="FuelConsumptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="Odometer" Type="Int32" />
+    <Property Name="FuelTypeID" Type="Int32" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="FillingDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="FuelType_T">
+    <Key>
+      <PropertyRef Name="FuelTypeID" />
+    </Key>
+    <Property Name="FuelTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="FuelType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Insurance_T">
+    <Key>
+      <PropertyRef Name="InsuranceID" />
+    </Key>
+    <Property Name="InsuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="Insurance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="JobCard_T">
+    <Key>
+      <PropertyRef Name="JobCardID" />
+    </Key>
+    <Property Name="JobCardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="CallID" Type="Int32" />
+    <Property Name="JobStarted" Type="DateTime" Precision="0" />
+    <Property Name="JobEnded" Type="DateTime" Precision="0" />
+    <Property Name="LabourHours" Type="Int32" />
+    <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="Role_T">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SalesPerson_T">
+    <Key>
+      <PropertyRef Name="SalesPersonID" />
+    </Key>
+    <Property Name="SalesPersonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniqueID" Type="Guid" />
+    <Property Name="SPID" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Service_T">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Shop_T">
+    <Key>
+      <PropertyRef Name="ShopID" />
+    </Key>
+    <Property Name="ShopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="ShopName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SparePart_T">
+    <Key>
+      <PropertyRef Name="SparePartID" />
+    </Key>
+    <Property Name="SparePartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AvailableQuantity" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="SpareServiceDetails_T">
+    <Key>
+      <PropertyRef Name="SpareServiceDetailsID" />
+    </Key>
+    <Property Name="SpareServiceDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="BillID" Type="Int32" />
+    <Property Name="JobCardID" Type="Int32" />
+    <Property Name="SparePart" Type="Boolean" />
+    <Property Name="SparePartID" Type="Int32" />
+    <Property Name="ServiceID" Type="Int32" />
+    <Property Name="LabourHour" Type="Int32" />
+    <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="Status_T">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" Nullable="false" />
+    <Property Name="StatusTypeID" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="StatusType_T">
+    <Key>
+      <PropertyRef Name="StatusTypeID" />
+    </Key>
+    <Property Name="StatusTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Subscription_T">
+    <Key>
+      <PropertyRef Name="SubscriptionID" />
+    </Key>
+    <Property Name="SubscriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="Trial" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TrafficContraventions_T">
+    <Key>
+      <PropertyRef Name="TrafficContraventionID" />
+    </Key>
+    <Property Name="TrafficContraventionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="TrafficContraventionDate" Type="DateTime" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User_T">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="UserType" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="DivisionID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NationalID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DOC" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Vehicle_T">
+    <Key>
+      <PropertyRef Name="VehicleID" />
+    </Key>
+    <Property Name="VehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleNoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleNo" Type="Int32" />
+    <Property Name="VehicleGroupID" Type="Int32" />
+    <Property Name="VehicleTypeID" Type="Int32" />
+    <Property Name="RegistrationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AutoBrandID" Type="Int32" />
+    <Property Name="PurchaseDate" Type="DateTime" Precision="0" />
+    <Property Name="PurchaseAmount" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="SoldDate" Type="DateTime" Precision="0" />
+    <Property Name="SoldAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Life" Type="Int32" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceFrequency" Type="Int32" />
+    <Property Name="FuelTypeID" Type="Int32" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="GPSURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DOC" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="VehicleGroup_T">
+    <Key>
+      <PropertyRef Name="VehicleGroupID" />
+    </Key>
+    <Property Name="VehicleGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehicle_Insurance_T">
+    <Key>
+      <PropertyRef Name="VehicleInsuranceID" />
+    </Key>
+    <Property Name="VehicleInsuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="InsuranceID" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="VehicleRegistration_T">
+    <Key>
+      <PropertyRef Name="VehicleRegistrationID" />
+    </Key>
+    <Property Name="VehicleRegistrationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="VehicleStatus_T">
+    <Key>
+      <PropertyRef Name="VehicleStatusID" />
+    </Key>
+    <Property Name="VehicleStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="DOC" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="VehicleType_T">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Vehicle_User_T">
+    <Key>
+      <PropertyRef Name="VehicleDriverID" />
+    </Key>
+    <Property Name="VehicleDriverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FleetCompanyID" Type="Int32" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="RatePerDay" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DOC" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="FleetManagerV2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Alert_T" EntityType="Self.Alert_T" />
+    <EntitySet Name="AutoBrand_T" EntityType="Self.AutoBrand_T" />
+    <EntitySet Name="Bill_T" EntityType="Self.Bill_T" />
+    <EntitySet Name="Call_T" EntityType="Self.Call_T" />
+    <EntitySet Name="Department_T" EntityType="Self.Department_T" />
+    <EntitySet Name="Division_T" EntityType="Self.Division_T" />
+    <EntitySet Name="FleetCompany_T" EntityType="Self.FleetCompany_T" />
+    <EntitySet Name="FMUser_T" EntityType="Self.FMUser_T" />
+    <EntitySet Name="FuelConsumption_T" EntityType="Self.FuelConsumption_T" />
+    <EntitySet Name="FuelType_T" EntityType="Self.FuelType_T" />
+    <EntitySet Name="Insurance_T" EntityType="Self.Insurance_T" />
+    <EntitySet Name="JobCard_T" EntityType="Self.JobCard_T" />
+    <EntitySet Name="Role_T" EntityType="Self.Role_T" />
+    <EntitySet Name="SalesPerson_T" EntityType="Self.SalesPerson_T" />
+    <EntitySet Name="Service_T" EntityType="Self.Service_T" />
+    <EntitySet Name="Shop_T" EntityType="Self.Shop_T" />
+    <EntitySet Name="SparePart_T" EntityType="Self.SparePart_T" />
+    <EntitySet Name="SpareServiceDetails_T" EntityType="Self.SpareServiceDetails_T" />
+    <EntitySet Name="Status_T" EntityType="Self.Status_T" />
+    <EntitySet Name="StatusType_T" EntityType="Self.StatusType_T" />
+    <EntitySet Name="Subscription_T" EntityType="Self.Subscription_T" />
+    <EntitySet Name="TrafficContraventions_T" EntityType="Self.TrafficContraventions_T" />
+    <EntitySet Name="User_T" EntityType="Self.User_T" />
+    <EntitySet Name="Vehicle_T" EntityType="Self.Vehicle_T" />
+    <EntitySet Name="VehicleGroup_T" EntityType="Self.VehicleGroup_T" />
+    <EntitySet Name="Vehicle_Insurance_T" EntityType="Self.Vehicle_Insurance_T" />
+    <EntitySet Name="VehicleRegistration_T" EntityType="Self.VehicleRegistration_T" />
+    <EntitySet Name="VehicleStatus_T" EntityType="Self.VehicleStatus_T" />
+    <EntitySet Name="VehicleType_T" EntityType="Self.VehicleType_T" />
+    <EntitySet Name="Vehicle_User_T" EntityType="Self.Vehicle_User_T" />
+    <FunctionImport Name="vehiclegroupname" ReturnType="Collection(String)">
+      <Parameter Name="FleetCompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="VehicleGroupID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="SparePartAutoBrand_T" EntityType="FleetManagerV2Model.SparePartAutoBrand_T" />
+  </EntityContainer>
+  <EntityType Name="SparePartAutoBrand_T">
+    <Key>
+      <PropertyRef Name="SparePartAutoBrandID" />
+    </Key>
+    <Property Name="SparePartAutoBrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SparePartID" Type="Int32" />
+    <Property Name="AutoBrandID" Type="Int32" />
+  </EntityType>
+</Schema>

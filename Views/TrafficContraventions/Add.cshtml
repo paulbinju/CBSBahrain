@@ -1,0 +1,215 @@
+﻿
+
+@{
+    ViewBag.Title = "Vehicle Details";
+}
+
+<script src="@Url.Content("~/assets/js/jquery.min.js")"></script>
+<div class="content-page">
+
+    <div class="content">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <div class="col-md-6">
+                                @foreach (var vehicle in ViewBag.Vehicle)
+                                {
+                                    <h4>@vehicle.Brand</h4>
+                                    <span style="font-size:12px;font-weight:bold"></span>
+                                }
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            @foreach (var vehicle in ViewBag.Vehicle)
+                            {
+                                <div class="col-md-3"><b>Registration No </b>: @vehicle.RegistrationNo</div>
+                                <div class="col-md-3"><b>Group</b> : @vehicle.VehicleGroup</div>
+                                <div class="col-md-3"><b>Type</b> : @vehicle.VehicleType</div>
+                                <div class="col-md-3"><b>Created On</b> : @vehicle.DOC.ToString("dd-MM-yyyy")</div>
+                                <div class="col-md-3"><b>Purchased Date</b> : @vehicle.PurchaseDate.ToString("yyyy-MM")</div>
+                                <div class="col-md-3"><b>Purchased Amount</b> : @Session["Currency"] @vehicle.PurchaseAmount</div>
+                                <div class="col-md-3"><b>Life</b> : @vehicle.Life Months</div>
+                                <div class="col-md-3"><b>Book Value</b> : @Session["Currency"] @ViewBag.BookValue</div>
+                                <div class="col-md-3"><b>Color</b> : @vehicle.Color</div>
+                                <div class="col-md-3"><b>Fuel Type</b> : @vehicle.FuelType</div>
+                                <div class="col-md-3"><b>Current Status</b> : @vehicle.Status</div>
+                                <div class="col-md-3"><b>Service Frequency</b> : @vehicle.ServiceFrequency</div>
+                                <div class="col-md-3"><b>Name</b> : @vehicle.VehicleNoName</div>
+                                
+                                <div class="col-md-6"><b>Note</b> : <span style="font-size:10px;">@vehicle.Note</span></div>
+
+
+
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            @if (ViewBag.VehicleUsers.Count > 0)
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+                                <div class="col-md-12">
+                                    <h4 class="sub-title">Allocated Users</h4>
+
+                                    <table class="table">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Mobile No.</th>
+                                            <th>Email ID</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Modify</th>
+                                        </tr>
+                                        @foreach (var vu in ViewBag.VehicleUsers)
+                                        {
+                                            <tr>
+                                                <td>@vu.Name (@vu.UserType)</td>
+                                                <td>@vu.MobileNo</td>
+                                                <td>@vu.EmailID</td>
+                                                <td>@vu.StartDate.ToString("dd-MMM-yyyy HH:mm:ss tt")</td>
+                                                <td>@(vu.EndDate == null ? "" : vu.EndDate.ToString("dd-MMM-yyyy HH:mm:ss tt"))</td>
+
+                                                <td>
+                                                    <a class="pcoded-badge label label-warning" data-toggle="modal" href="#TrafficContraventionsModal-@vu.UserID"><i class="icofont icofont-plus"></i> Add Traffic Contraventions</a>
+                                                    <div class="modal fade modal-dialog-center" id="TrafficContraventionsModal-@vu.UserID" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content-wrap">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title">Add Traffic Contraventions</h4>
+
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                    </div>
+                                                                    @using (Html.BeginForm("SaveContraventions", "TrafficContraventions"))
+                                                                    {
+                                                                        <div class="modal-body">
+                                                                            <div class="form-horizontal col-md-12">
+
+                                                                                <div class="form-group">
+                                                                                    <div class="col-md-12">
+                                                                                        <h4 style="color:white">Name: @vu.Name</h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="col-md-12">
+                                                                                        Date<br />
+                                                                                        <input type="datetime-local" name="TrafficContraventionDate" required class="form-control" />
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="col-md-12">
+                                                                                        Note<br />
+                                                                                        <textarea name="description" class="form-control" required rows="5"></textarea>
+
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="form-group">
+                                                                                    <div class=" col-md-12">
+
+                                                                                        <input type="hidden" name="VehicleID" value="@ViewBag.VehicleID" />
+                                                                                        <input type="hidden" name="UserID" value="@vu.UserID" />
+                                                                                        <input type="hidden" name="VehicleUserID" value="@vu.VehicleUserID" />
+
+
+                                                                                        <button class="btn btn-danger">Add Traffic Contravention</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    }
+                                                                    <br style="clear:both" />
+                                                                    <div class="modal-footer">
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                   
+                                                </td>
+
+
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+           
+            <div class="row">
+              
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+
+
+                            <div class="col-md-12">
+                                <h4 class="sub-title">Traffic Contraventions</h4>
+
+                                @foreach (var tc in ViewBag.TrafficContraventions)
+                                {
+
+                                    <div style="border-bottom:1px solid #ececec;font-size:11px;padding:5px 0">
+                                        @tc.UserName - Date: @tc.TrafficContraventionsDate.ToString("dd-MMM-yyyy hh:mm tt") - @tc.Description
+                                    </div>
+                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+ 
+    <script src="@Url.Content("~/assets/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/modernizr.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/detect.js")"></script>
+    <script src="@Url.Content("~/assets/js/fastclick.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.slimscroll.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.blockUI.js")"></script>
+    <script src="@Url.Content("~/assets/js/waves.js")"></script>
+    <script src="@Url.Content("~/assets/js/wow.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.nicescroll.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.scrollTo.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/app.js")"></script>
+</div>
+ 
+
+ 
+ 
+ 

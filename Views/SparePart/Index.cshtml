@@ -1,0 +1,268 @@
+﻿
+@{
+    ViewBag.Title = "Spare Part";
+}
+
+<script src="@Url.Content("~/assets/js/jquery.min.js")"></script>
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <button class="btn btn-primary pull-right" data-toggle="modal" href="#SparePartModal"><i class="icofont icofont-ui-add"></i>Add Spare Part</button>
+                            <h4 class="page-title">Spare Parts</h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+
+
+
+                                <table class="table">
+                                    <tr>
+                                       
+                                        <th>Part Code</th>
+                                        <th>Description</th>
+                                        <th>Available Quantity</th>
+                                        <th>Price</th>
+                                        <th>Compatable Vehicles</th>
+                                        <th>Modify</th>
+
+                                    </tr>
+
+                                    @foreach (var item in ViewBag.SparePart)
+                                    {
+                                        <tr>
+                                            
+                                            <td>
+                                                @item.Code
+                                            </td>
+                                            <td>
+                                                @item.Description
+                                            </td>
+                                            <td>
+                                                @item.AvailableQuantity
+                                            </td>
+                                            <td>
+                                                @item.Price
+                                            </td>
+                                            <td style="font-size:10px;width:500px;">@item.AutoBrand</td>
+                                            <td>
+                                                <a  data-toggle="modal" href="#SparePartEdit-@item.SparePartID" style="cursor:pointer" class="pcoded-badge label label-warning"><i class="fa fa-pencil"></i> Edit</a>
+
+                                            </td>
+                                        </tr>
+                                        
+                                    
+                                    <div class="modal fade modal-dialog-center" id="SparePartEdit-@item.SparePartID" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content-wrap">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title">Edit Spare Part</h4>
+                                                    </div>
+
+                                                    @using (Html.BeginForm("Edit", "SparePart", FormMethod.Post, new { onsubmit = "return validateForm();" }))
+                                                    {
+                                                        <div class="modal-body">
+                                                            @Html.AntiForgeryToken()
+                                                            <div class="form-horizontal col-md-12">
+
+                                                                <div class="form-group">
+                                                                    <input type="hidden" name="SparePartID" value="@item.SparePartID" />
+                                                                    <div class="col-md-12">
+                                                                        Part Code<br />
+                                                                        <input type="text" class="form-control" value="@item.Code" name="Code" required />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-md-12">
+                                                                        Description<br />
+                                                                        <input type="text" class="form-control" value="@item.Description" name="Description" required />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-md-12">
+                                                                        Available Quantity<br />
+                                                                        <input type="number" class="form-control" value="@item.AvailableQuantity" name="AvailableQuantity" required />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-md-12">
+                                                                        Rate<br />
+                                                                        <input type="number" step="any" class="form-control"  value="@item.Price"  name="Price" required />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-md-12">
+                                                                        Select Compatable Vehicles<br />
+                                                                        @foreach (var sp in ViewBag.AutoBrand)
+                                                                        {
+                                                                            <div class="col-md-3"><input  type="checkbox" name="AutoBrandID" value="@sp.AutoBrandID" /> @sp.AutoBrand</div>
+                                                                        }
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-md-12">
+                                                                        <input type="submit" value="Update" class="btn btn-danger" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <br style="clear:both" />
+                                                        <div class="modal-footer">
+
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    }
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function validateForm() {
+        var checkboxs = document.getElementsByName("AutoBrandID");
+        var okay = false;
+        for (var i = 0, l = checkboxs.length; i < l; i++) {
+            if (checkboxs[i].checked) {
+                okay = true;
+                break;
+            }
+        }
+        if (okay) {
+
+        }
+        else {
+            alert("Please select atleast one compatable vehicle!");
+            return false;
+        }
+    }
+</script>
+
+
+
+<div class="modal fade modal-dialog-center" id="SparePartModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content-wrap">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Add Spare Part</h4>
+                </div>
+
+                @using (Html.BeginForm("Create", "SparePart", FormMethod.Post, new { onsubmit = "return validateForm();" }))
+                {
+                    <div class="modal-body">
+                        @Html.AntiForgeryToken()
+                        <div class="form-horizontal col-md-12">
+                           
+                            <div class="form-group">
+
+                                <div class="col-md-12">
+                                    Part Code<br />
+                                    <input type="text" class="form-control" name="Code" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Description<br />
+                                    <input type="text" class="form-control" name="Description" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Available Quantity<br />
+                                    <input type="number" class="form-control" name="AvailableQuantity" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Rate<br />
+                                    <input type="number" step="any" class="form-control" name="Price" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Select Compatable Vehicles<br />
+                                    @foreach (var sp in ViewBag.AutoBrand)
+                                    {
+                                        <div class="col-md-3"><input type="checkbox"  name="AutoBrandID" value="@sp.AutoBrandID" /> @sp.AutoBrand</div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="submit" value="Create" class="btn btn-danger" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br style="clear:both" />
+                    <div class="modal-footer">
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="@Url.Content("~/assets/js/bootstrap.min.js")"></script>
+<script src="@Url.Content("~/assets/js/modernizr.min.js")"></script>
+<script src="@Url.Content("~/assets/js/detect.js")"></script>
+<script src="@Url.Content("~/assets/js/fastclick.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.slimscroll.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.blockUI.js")"></script>
+<script src="@Url.Content("~/assets/js/waves.js")"></script>
+<script src="@Url.Content("~/assets/js/wow.min.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.nicescroll.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.scrollTo.min.js")"></script>
+<script src="@Url.Content("~/assets/js/app.js")"></script>
+
+
+ 

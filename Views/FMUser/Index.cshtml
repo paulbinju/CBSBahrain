@@ -1,0 +1,318 @@
+﻿ 
+
+@{
+    ViewBag.Title = "SW User";
+}
+
+
+
+<script src="@Url.Content("~/assets/js/jquery.min.js")"></script>
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <button class="btn btn-primary pull-right" data-toggle="modal" href="#FMUserModal"><i class="icofont icofont-ui-add"></i>Add Software User</button>
+                            <h4 class="page-title">Software User</h4>
+                            <b style="color:red">@ViewBag.Message</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+
+
+
+                                <table class="table">
+                                    <tr>
+                                        <th>Role</th>
+                                        <th>Department</th>
+                                        <th>Division</th>
+                                        <th>Name</th>
+                                        <th>Mobile</th>
+                                        <th>Email</th>
+                                        
+                                        <th>Modify</th>
+                                    </tr>
+
+                                    @foreach (var item in ViewBag.FMusers)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @item.Role
+                                            </td>
+                                            <td>
+                                                @item.Department
+                                            </td>
+                                            <td>
+                                                @item.Division
+                                            </td>
+                                            <td>
+                                                @item.Name
+                                            </td>
+                                            <td>
+                                                @item.Mobile
+                                            </td>
+                                            <td>
+                                                @item.Email
+                                            </td>
+                                             
+                                            <td>
+                                                <a onclick="openrow(@item.FMUserID)" style="cursor:pointer" class="pcoded-badge label label-warning"><i class="fa fa-pencil"></i> Edit</a>
+
+                                            </td>
+                                        </tr>
+                                        using (Html.BeginForm("Edit", "FMUser"))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.ValidationSummary(true)
+                                            <tr id="edit-@item.FMUserID" class="editrow">
+                                                <td>
+                                                    <select   name="roleid" class="form-control" style="font-size:11px;">
+                                                        @foreach (var r in ViewBag.Role)
+                                                        {
+                                                            if (item.RoleID != r.RoleID)
+                                                            {
+                                                            <option value="@r.RoleID">@r.Role</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option selected value="@r.RoleID">@r.Role</option>
+
+                                                            }
+                                                        }
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select id="department"   name="departmentid" class="form-control" onchange="updatedivision()"  style="font-size:11px;">
+                                                        @foreach (var d in ViewBag.Department)
+                                                        {
+                                                            if (item.DepartmentID != d.DepartmentID)
+                                                            {
+                                                            <option value="@d.DepartmentID">@d.Department</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option selected value="@d.DepartmentID">@d.Department</option>
+                                                            }
+                                                        }
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                        <select id="division" name="divisionid" class="form-control"  style="font-size:11px;">
+                                                            <option value="@item.DivisionID">@item.Division</option>
+                                                        </select>
+                                                </td>
+                                                <td>
+                                                    <input required class="form-control cke_required" type="text" name="Name" value="@item.Name" />
+                                                </td>
+                                                <td>
+                                                    <input required class="form-control cke_required" type="text" name="Mobile" value="@item.Mobile" />
+                                                </td>
+                                                <td>
+                                                    <input required class="form-control cke_required" type="email" name="Email" value="@item.Email" />
+                                                    <input type="hidden" name="FMUserID" value="@item.FMUserID" />
+
+                                                </td>
+                                                <td>
+                                                    <input required class="form-control cke_required" type="text" name="FMPassword" value="@item.FMPassword" />
+                                                </td>
+                                                <td>
+
+                                                    <button class="pcoded-badge label label-success"><i class="fa fa-check"></i> Update</button>
+
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+
+
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () { $(".editrow").hide(); });
+    function openrow(row) { $("#edit-" + row).show(2000); }
+
+
+    function updatedivision() {
+        getdivision($("#department").val());
+    }
+    function updatedivision2() {
+        getdivision2($("#department2").val());
+    }
+
+
+
+    function getdivision(departmentid) {
+
+        $.getJSON('@Url.Content("~/")App/getdivision/' + departmentid + '/?jsoncallback=?', function (data) {
+            var content = "";
+            $("#division").empty();
+            $.each(data, function (key, value) {
+                $("#division").append("<option value='" + data[key].DivisionID + "'>" + data[key].Division + "</option>");
+            });
+
+        });
+    }
+
+        function getdivision2(departmentid) {
+
+        $.getJSON('@Url.Content("~/")App/getdivision/' + departmentid + '/?jsoncallback=?', function (data) {
+            var content = "";
+            $("#division2").empty();
+            $.each(data, function (key, value) {
+                $("#division2").append("<option value='" + data[key].DivisionID + "'>" + data[key].Division + "</option>");
+            });
+
+        });
+    }
+</script>
+
+
+
+<div class="modal fade modal-dialog-center" id="FMUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content-wrap">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Add Software User</h4>
+                </div>
+
+                @using (Html.BeginForm("Create", "FMUser"))
+                {
+
+                    <div class="modal-body">
+
+
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Role<br />
+                                    <select id="roleid" name="roleid" class="form-control">
+                                        @foreach (var r in ViewBag.Role)
+                                        {
+                                            <option value="@r.RoleID">@r.Role</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Department<br />
+                                    <select id="department2" name="departmentid" class="form-control" onchange="updatedivision2()" required>
+                                        <option value="">Select</option>
+                                        @foreach (var d in ViewBag.Department)
+                                        {
+                                        <option value="@d.DepartmentID">@d.Department</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Division<br />
+                                    <select id="division2" name="divisionid" class="form-control"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Name<br />
+                                    <input type="text" class="form-control" name="name" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Mobile<br />
+                                    <input type="text" class="form-control" name="mobile" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Email (User ID)<br />
+                                    <input type="email" class="form-control" name="email" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    Password<br />
+                                    <input type="password" class="form-control" name="FMPassword" required />
+                                </div>
+                            </div>
+                            
+                             
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="submit" value="Create" class="btn btn-danger" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br style="clear:both" />
+                    <div class="modal-footer">
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="@Url.Content("~/assets/js/bootstrap.min.js")"></script>
+<script src="@Url.Content("~/assets/js/modernizr.min.js")"></script>
+<script src="@Url.Content("~/assets/js/detect.js")"></script>
+<script src="@Url.Content("~/assets/js/fastclick.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.slimscroll.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.blockUI.js")"></script>
+<script src="@Url.Content("~/assets/js/waves.js")"></script>
+<script src="@Url.Content("~/assets/js/wow.min.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.nicescroll.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.scrollTo.min.js")"></script>
+<script src="@Url.Content("~/assets/js/app.js")"></script>

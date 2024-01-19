@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Fleetmanager.Models.TrafficContraventions_T>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FleetCompanyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrafficContraventionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FleetCompanyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrafficContraventionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TrafficContraventionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TrafficContraventionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TrafficContraventionID })
+        </td>
+    </tr>
+}
+
+</table>

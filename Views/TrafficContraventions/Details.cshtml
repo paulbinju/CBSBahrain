@@ -1,0 +1,58 @@
+﻿@model Fleetmanager.Models.TrafficContraventions_T
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TrafficContraventions_T</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FleetCompanyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleetCompanyID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrafficContraventionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrafficContraventionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrafficContraventionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

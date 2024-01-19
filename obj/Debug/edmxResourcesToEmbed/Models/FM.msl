@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FleetManagerV2ModelStoreContainer" CdmEntityContainer="FleetManagerV2Entities">
+    <EntitySetMapping Name="Alert_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Alert_T">
+        <MappingFragment StoreEntitySet="Alert_T">
+          <ScalarProperty Name="AlertID" ColumnName="AlertID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="Alert" ColumnName="Alert" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutoBrand_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.AutoBrand_T">
+        <MappingFragment StoreEntitySet="AutoBrand_T">
+          <ScalarProperty Name="AutoBrandID" ColumnName="AutoBrandID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bill_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Bill_T">
+        <MappingFragment StoreEntitySet="Bill_T">
+          <ScalarProperty Name="BillID" ColumnName="BillID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="ShopID" ColumnName="ShopID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Call_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Call_T">
+        <MappingFragment StoreEntitySet="Call_T">
+          <ScalarProperty Name="CallID" ColumnName="CallID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="FMUserID" ColumnName="FMUserID" />
+          <ScalarProperty Name="JobCardGenerated" ColumnName="JobCardGenerated" />
+          <ScalarProperty Name="ReportedOn" ColumnName="ReportedOn" />
+          <ScalarProperty Name="StartedOn" ColumnName="StartedOn" />
+          <ScalarProperty Name="CompletedOn" ColumnName="CompletedOn" />
+          <ScalarProperty Name="ExternalGarage" ColumnName="ExternalGarage" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Department_T">
+        <MappingFragment StoreEntitySet="Department_T">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Division_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Division_T">
+        <MappingFragment StoreEntitySet="Division_T">
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FleetCompany_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.FleetCompany_T">
+        <MappingFragment StoreEntitySet="FleetCompany_T">
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Activated" ColumnName="Activated" />
+          <ScalarProperty Name="SPID" ColumnName="SPID" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FMUser_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.FMUser_T">
+        <MappingFragment StoreEntitySet="FMUser_T">
+          <ScalarProperty Name="FMUserID" ColumnName="FMUserID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FMPassword" ColumnName="FMPassword" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuelConsumption_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.FuelConsumption_T">
+        <MappingFragment StoreEntitySet="FuelConsumption_T">
+          <ScalarProperty Name="FuelConsumptionID" ColumnName="FuelConsumptionID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="Odometer" ColumnName="Odometer" />
+          <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="FillingDate" ColumnName="FillingDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuelType_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.FuelType_T">
+        <MappingFragment StoreEntitySet="FuelType_T">
+          <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Insurance_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Insurance_T">
+        <MappingFragment StoreEntitySet="Insurance_T">
+          <ScalarProperty Name="InsuranceID" ColumnName="InsuranceID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="Insurance" ColumnName="Insurance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobCard_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.JobCard_T">
+        <MappingFragment StoreEntitySet="JobCard_T">
+          <ScalarProperty Name="JobCardID" ColumnName="JobCardID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="CallID" ColumnName="CallID" />
+          <ScalarProperty Name="JobStarted" ColumnName="JobStarted" />
+          <ScalarProperty Name="JobEnded" ColumnName="JobEnded" />
+          <ScalarProperty Name="LabourHours" ColumnName="LabourHours" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Role_T">
+        <MappingFragment StoreEntitySet="Role_T">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesPerson_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.SalesPerson_T">
+        <MappingFragment StoreEntitySet="SalesPerson_T">
+          <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
+          <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+          <ScalarProperty Name="SPID" ColumnName="SPID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Service_T">
+        <MappingFragment StoreEntitySet="Service_T">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shop_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Shop_T">
+        <MappingFragment StoreEntitySet="Shop_T">
+          <ScalarProperty Name="ShopID" ColumnName="ShopID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePart_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.SparePart_T">
+        <MappingFragment StoreEntitySet="SparePart_T">
+          <ScalarProperty Name="SparePartID" ColumnName="SparePartID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AvailableQuantity" ColumnName="AvailableQuantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpareServiceDetails_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.SpareServiceDetails_T">
+        <MappingFragment StoreEntitySet="SpareServiceDetails_T">
+          <ScalarProperty Name="SpareServiceDetailsID" ColumnName="SpareServiceDetailsID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="BillID" ColumnName="BillID" />
+          <ScalarProperty Name="JobCardID" ColumnName="JobCardID" />
+          <ScalarProperty Name="SparePart" ColumnName="SparePart" />
+          <ScalarProperty Name="SparePartID" ColumnName="SparePartID" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="LabourHour" ColumnName="LabourHour" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Status_T">
+        <MappingFragment StoreEntitySet="Status_T">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="StatusTypeID" ColumnName="StatusTypeID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusType_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.StatusType_T">
+        <MappingFragment StoreEntitySet="StatusType_T">
+          <ScalarProperty Name="StatusTypeID" ColumnName="StatusTypeID" />
+          <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscription_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Subscription_T">
+        <MappingFragment StoreEntitySet="Subscription_T">
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Trial" ColumnName="Trial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrafficContraventions_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.TrafficContraventions_T">
+        <MappingFragment StoreEntitySet="TrafficContraventions_T">
+          <ScalarProperty Name="TrafficContraventionID" ColumnName="TrafficContraventionID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TrafficContraventionDate" ColumnName="TrafficContraventionDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.User_T">
+        <MappingFragment StoreEntitySet="User_T">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicle_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Vehicle_T">
+        <MappingFragment StoreEntitySet="Vehicle_T">
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleNoName" ColumnName="VehicleNoName" />
+          <ScalarProperty Name="VehicleNo" ColumnName="VehicleNo" />
+          <ScalarProperty Name="VehicleGroupID" ColumnName="VehicleGroupID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="AutoBrandID" ColumnName="AutoBrandID" />
+          <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+          <ScalarProperty Name="PurchaseAmount" ColumnName="PurchaseAmount" />
+          <ScalarProperty Name="SoldDate" ColumnName="SoldDate" />
+          <ScalarProperty Name="SoldAmount" ColumnName="SoldAmount" />
+          <ScalarProperty Name="Life" ColumnName="Life" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="ServiceFrequency" ColumnName="ServiceFrequency" />
+          <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="GPSURL" ColumnName="GPSURL" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleGroup_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.VehicleGroup_T">
+        <MappingFragment StoreEntitySet="VehicleGroup_T">
+          <ScalarProperty Name="VehicleGroupID" ColumnName="VehicleGroupID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleGroup" ColumnName="VehicleGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicle_Insurance_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Vehicle_Insurance_T">
+        <MappingFragment StoreEntitySet="Vehicle-Insurance_T">
+          <ScalarProperty Name="VehicleInsuranceID" ColumnName="VehicleInsuranceID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="InsuranceID" ColumnName="InsuranceID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleRegistration_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.VehicleRegistration_T">
+        <MappingFragment StoreEntitySet="VehicleRegistration_T">
+          <ScalarProperty Name="VehicleRegistrationID" ColumnName="VehicleRegistrationID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleStatus_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.VehicleStatus_T">
+        <MappingFragment StoreEntitySet="VehicleStatus_T">
+          <ScalarProperty Name="VehicleStatusID" ColumnName="VehicleStatusID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleType_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.VehicleType_T">
+        <MappingFragment StoreEntitySet="VehicleType_T">
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicle_User_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.Vehicle_User_T">
+        <MappingFragment StoreEntitySet="Vehicle-User_T">
+          <ScalarProperty Name="VehicleDriverID" ColumnName="VehicleDriverID" />
+          <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="RatePerDay" ColumnName="RatePerDay" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="vehiclegroupname" FunctionName="FleetManagerV2Model.Store.vehiclegroupname" />
+    <EntitySetMapping Name="SparePartAutoBrand_T">
+      <EntityTypeMapping TypeName="FleetManagerV2Model.SparePartAutoBrand_T">
+        <MappingFragment StoreEntitySet="SparePartAutoBrand_T">
+          <ScalarProperty Name="AutoBrandID" ColumnName="AutoBrandID" />
+          <ScalarProperty Name="SparePartID" ColumnName="SparePartID" />
+          <ScalarProperty Name="SparePartAutoBrandID" ColumnName="SparePartAutoBrandID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

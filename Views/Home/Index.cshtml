@@ -1,0 +1,272 @@
+﻿    <!--Morris Chart CSS -->
+<link rel="stylesheet" href="@Url.Content("~/assets/plugins/morris/morris.css")">
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+                <h4 class="page-title">Dashboard</h4>
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="panel text-center">
+                            <div class="panel-heading">
+                                <h4 class="panel-title text-muted font-light">Total Invoice</h4>
+                            </div>
+                            <div class="panel-body p-t-10">
+                                <h2 class="m-t-0 m-b-15"><b>@Session["Currency"] @ViewBag.TotalBill</b></h2>
+                                <a href="@Url.Content("~/Reports/InvoiceCompanywise/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))" class="btn-xs btn-danger">Company Report</a>
+                                <a href="@Url.Content("~/Reports/InvoiceService/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))" class="btn-xs btn-warning">Service Report</a>
+                               <a href="@Url.Content("~/Reports/InvoiceSparePart/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))" class="btn-xs btn-success">Spare Parts Report</a> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="panel text-center">
+                            <div class="panel-heading">
+                                <h4 class="panel-title text-muted font-light">Total Garage Cost</h4>
+                            </div>
+                            <div class="panel-body p-t-10">
+                                <h2 class="m-t-0 m-b-15"><b>@Session["Currency"] @ViewBag.TotalGarageSpareParts</b></h2>
+                                <a href="@Url.Content("~/Reports/GarageService/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))" class="btn-xs btn-warning">Service Report</a>
+                                <a href="@Url.Content("~/Reports/GarageSparePart/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))" class="btn-xs btn-success">Spare Parts Report</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="panel text-center">
+                            <div class="panel-heading">
+                                <h4 class="panel-title text-muted font-light">Total Fuel Cost</h4>
+                            </div>
+                            <div class="panel-body p-t-10">
+                                <h2 class="m-t-0 m-b-15"><b>@Session["Currency"] @ViewBag.TotalFuel</b></h2>
+                                <a href="@Url.Content("~/Reports/Fuel/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))" class="btn-xs btn-danger">Fuel Report</a>
+                                <a href="@Url.Content("~/Reports/FuelPetrol/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))" class="btn-xs btn-warning">Petrol Report</a>
+                                <a href="@Url.Content("~/Reports/FuelDiesel/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))" class="btn-xs btn-success">Diesel Report</a>
+                        </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <h4 class="m-t-0">Invoice</h4>
+
+                                <ul class="list-inline widget-chart m-t-20 text-center">
+                                    <li>
+                                        <h4 style="font-size:16px;">@Session["Currency"] @ViewBag.TotalService</h4>
+                                        <p class="text-muted m-b-0">Service</p>
+                                    </li>
+                                    <li>
+                                        <h4  style="font-size:16px;">@Session["Currency"] @ViewBag.TotalSpareParts</h4>
+                                        <p class="text-muted m-b-0">Spare Parts</p>
+                                    </li>
+                                     
+                                </ul>
+
+                                <div id="morris-donut-example" style="height: 300px"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <h4 class="m-t-0">Garage</h4>
+
+                                <ul class="list-inline widget-chart m-t-20 text-center">
+                                    <li>
+                                        <h4 class=""><b>@ViewBag.TotalGarageLabourHours Hours</b></h4>
+                                        <p class="text-muted m-b-0">Labour Hours</p>
+                                    </li>
+                                    <li>
+                                        <h4 class=""><b>@Session["Currency"] @ViewBag.TotalGarageSpareParts</b></h4>
+                                        <p class="text-muted m-b-0">Spare Parts</p>
+                                    </li>
+                                     
+                                </ul>
+
+                                <div id="morris-bar-example" style="height: 300px"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <h4 class="m-t-0">Fuel</h4>
+
+                                <ul class="list-inline widget-chart m-t-20 text-center">
+                                    <li>
+                                        <h4 class=""><b>@Session["Currency"] @ViewBag.Petrol</b></h4>
+                                        <p class="text-muted m-b-0">Petrol</p>
+                                    </li>
+                                    <li>
+                                        <h4 class=""><b>@Session["Currency"] @ViewBag.Diesel</b></h4>
+                                        <p class="text-muted m-b-0">Diesel</p>
+                                    </li>
+                              
+                                </ul>
+
+                                <div id="morris-area-example" style="height: 300px"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end row -->
+
+           
+                <!-- end row -->
+
+
+
+            </div><!-- container -->
+
+
+        </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+
+    <!-- jQuery  -->
+    <script src="@Url.Content("~/assets/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/modernizr.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/detect.js")"></script>
+    <script src="@Url.Content("~/assets/js/fastclick.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.slimscroll.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.blockUI.js")"></script>
+    <script src="@Url.Content("~/assets/js/waves.js")"></script>
+    <script src="@Url.Content("~/assets/js/wow.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.nicescroll.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.scrollTo.min.js")"></script>
+    <!--Morris Chart-->
+    <script src="@Url.Content("~/assets/plugins/morris/morris.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/raphael/raphael-min.js")"></script>
+
+ 
+ 
+
+
+
+    <script src="@Url.Content("~/assets/pages/datatables.init.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/modernizr.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/detect.js")"></script>
+    <script src="@Url.Content("~/assets/js/fastclick.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.slimscroll.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.blockUI.js")"></script>
+    <script src="@Url.Content("~/assets/js/waves.js")"></script>
+    <script src="@Url.Content("~/assets/js/wow.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.nicescroll.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.scrollTo.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/app.js")"></script>
+    <footer class="footer">
+        © @DateTime.Now.Year Fleet Manager - All Rights Reserved.
+    </footer>
+
+</div>
+
+<script>
+    !function ($) {
+        "use strict";
+
+        var Dashboard = function () {
+        };
+
+
+        //creates area chart
+        Dashboard.prototype.createAreaChart = function (element, pointSize, lineWidth, data, xkey, ykeys, labels, lineColors) {
+            Morris.Area({
+                element: element,
+                pointSize: 3,
+                lineWidth: 1,
+                data: data,
+                xkey: xkey,
+                ykeys: ykeys,
+                labels: labels,
+                resize: true,
+                gridLineColor: '#3d4956',
+                hideHover: 'auto',
+                lineColors: lineColors
+            });
+        },
+            //creates Bar chart
+            Dashboard.prototype.createBarChart = function (element, data, xkey, ykeys, labels, lineColors) {
+                Morris.Bar({
+                    element: element,
+                    data: data,
+                    xkey: xkey,
+                    ykeys: ykeys,
+                    labels: labels,
+                    gridLineColor: '#3d4956',
+                    barSizeRatio: 0.4,
+                    resize: true,
+                    hideHover: 'auto',
+                    barColors: lineColors
+                });
+            },
+
+            //creates Donut chart
+            Dashboard.prototype.createDonutChart = function (element, data, colors) {
+                Morris.Donut({
+                    element: element,
+                    data: data,
+                    resize: true,
+                    colors: colors,
+                    backgroundColor: '#2f3e47',
+                    labelColor: '#fff'
+                });
+            },
+
+            Dashboard.prototype.init = function () {
+                //creating area chart
+              
+
+                //creating bar chart
+                var $barData = [
+                    { y: '@DateTime.Now.Year', a: @ViewBag.TotalGarageLabourHours, b: @ViewBag.TotalGarageSpareParts }
+                ];
+                this.createBarChart('morris-bar-example', $barData, 'y', ['a', 'b'], ['Labour Hours', 'Spare Parts'], ['#04a2b3', '#00a3ff']);
+
+                //creating donut chart
+                var $donutData = [
+                    { label: "Service", value: @ViewBag.TotalService },
+                    { label: "Spare Parts", value: @ViewBag.TotalService }
+                ];
+                this.createDonutChart('morris-donut-example', $donutData, ['#dcdcdc', '#04a2b3']);
+
+
+             var $donutData2 = [
+                    { label: "Petrol", value: @ViewBag.Petrol },
+                    { label: "Diesel", value: @ViewBag.Diesel }
+                ];
+             this.createDonutChart('morris-area-example', $donutData2, ['#dcdcdc', '#04a2b3']);
+
+            },
+            //init
+            $.Dashboard = new Dashboard, $.Dashboard.Constructor = Dashboard
+    }(window.jQuery),
+
+        //initializing
+        function ($) {
+            "use strict";
+            $.Dashboard.init();
+        }(window.jQuery);
+</script>

@@ -1,0 +1,201 @@
+﻿ 
+
+@{
+    ViewBag.Title = "Division";
+}
+
+
+<script src="@Url.Content("~/assets/js/jquery.min.js")"></script>
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <button class="btn btn-primary pull-right" data-toggle="modal" href="#DivisionModal"><i class="icofont icofont-ui-add"></i>Add Division</button>
+                            <h4 class="page-title">Division</h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+
+
+
+                                <table class="table">
+                                    <tr>
+                                        <th>Department</th>
+                                        <th>Division</th>
+                                        <th>Modify</th>
+                                    </tr>
+
+                                    @foreach (var item in ViewBag.Division)
+                                    {
+                                        <tr>
+                                            <td>@item.Department</td>
+                                            <td>
+                                                @item.Division
+                                            </td>
+                                            <td>
+                                                <a onclick="openrow(@item.DivisionID)" style="cursor:pointer" class="pcoded-badge label label-warning"><i class="fa fa-pencil"></i> Edit</a>
+
+                                            </td>
+                                        </tr>
+                                        using (Html.BeginForm("Edit", "Division"))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.ValidationSummary(true)
+                                            <tr id="edit-@item.DivisionID" class="editrow">
+                                                <td>
+
+                                                    <select class="form-control" name="DepartmentID">
+
+                                                        @foreach (var d in ViewBag.Department)
+                                                        {
+                                                            if (item.DepartmentID != d.DepartmentID)
+                                                            {
+                                                                <option value="@d.DepartmentID">@d.Department</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option selected value="@d.DepartmentID">@d.Department</option>
+                                                            }
+                                                        }
+                                                    </select>
+
+                                                    <input type="hidden" name="DivisionID" value="@item.DivisionID" />
+
+                                                </td>
+                                                <td>
+                                                    <input required class="form-control cke_required" type="text" name="Division" value="@item.Division" />
+                                                </td>
+                                                <td>
+
+                                                    <button class="pcoded-badge label label-success"><i class="fa fa-check"></i> Update</button>
+
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+
+
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () { $(".editrow").hide(); });
+    function openrow(row) { $("#edit-" + row).show(2000); }
+</script>
+
+
+
+<div class="modal fade modal-dialog-center" id="DivisionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content-wrap">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Add Division</h4>
+                </div>
+
+                @using (Html.BeginForm("Create", "Division"))
+                {
+
+                    <div class="modal-body">
+
+
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+
+                                <div class="col-md-12">
+                                    Department<br />
+                                    <select class="form-control" name="DepartmentID">
+
+                                        @foreach (var d in ViewBag.Department)
+                                        {
+                                                <option   value="@d.DepartmentID">@d.Department</option>
+                                        }
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-md-12">
+                                    Division<br />
+                                    <input type="text" class="form-control" name="Division" required />
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="submit" value="Create" class="btn btn-danger" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br style="clear:both" />
+                    <div class="modal-footer">
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="@Url.Content("~/assets/js/bootstrap.min.js")"></script>
+<script src="@Url.Content("~/assets/js/modernizr.min.js")"></script>
+<script src="@Url.Content("~/assets/js/detect.js")"></script>
+<script src="@Url.Content("~/assets/js/fastclick.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.slimscroll.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.blockUI.js")"></script>
+<script src="@Url.Content("~/assets/js/waves.js")"></script>
+<script src="@Url.Content("~/assets/js/wow.min.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.nicescroll.js")"></script>
+<script src="@Url.Content("~/assets/js/jquery.scrollTo.min.js")"></script>
+<script src="@Url.Content("~/assets/js/app.js")"></script>
+

@@ -1,0 +1,246 @@
+﻿
+<link href="@Url.Content("~/assets/plugins/datatables/jquery.dataTables.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/assets/plugins/datatables/buttons.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/assets/plugins/datatables/dataTables.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <button class="btn btn-primary pull-right" data-toggle="modal" href="#UserModal"><i class="icofont icofont-ui-add"></i>Add @ViewBag.user</button>
+                            <h4 class="page-title">User (@ViewBag.user)</h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-content-wrapper ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <table id="datatable-buttons" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Deparment   
+                                            </th>
+                                            <th>
+                                                Division
+                                            </th>
+                                            <th>
+                                                @ViewBag.user
+                                            </th>
+                                            <th>
+                                                Designation
+                                            </th>
+                                            <th>
+                                                Mobile
+                                            </th>
+                                            <th>Modify</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach (var item in ViewBag.Users)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @item.department<br />
+                                                   
+                                                </td>
+                                                <td>@item.division</td>
+                                                <td>
+                                                    @item.name
+                                                </td>
+                                                <td>
+                                                   
+                                                    @item.designation
+                                                </td>
+                                            
+                                                <td> 
+                                                    @item.mobileno
+                                                </td>
+                                                 
+                                         
+                                                <td>
+                                                    <a onclick="openrow(@item.userid)" style="cursor:pointer" class="pcoded-badge label label-warning"><i class="fa fa-pencil"></i> Edit</a>
+                                                    &nbsp;
+                                                    <a class="pcoded-badge label label-danger" href="@Url.Content("~/UserVehicleAsso1/" + item.userid)">Allocate Vehicle</a>
+                                                </td>
+                                            </tr>
+
+                  
+                                        }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div> <!-- End Row -->
+                </div><!-- container -->
+            </div> <!-- Page content Wrapper -->
+        </div> <!-- content -->
+    </div>
+
+
+
+    <div class="modal fade modal-dialog-center" id="UserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content-wrap">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:white">&times;</button>
+                        <h4 class="modal-title" style="color:white">Add @ViewBag.user</h4>
+                    </div>
+
+                    @using (Html.BeginForm("Createx", "Userx"))
+                {
+
+                        <div class="col-md-12">
+                            <div class="modal-body col-md-12">
+
+                                <div class="form-horizontal">
+
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            Department<br />
+                                            <select id="department2" name="departmentid" class="form-control" onchange="updatedivision2()" required>
+                                                <option value="">Select</option>
+                                                @foreach (var d in ViewBag.Department)
+                                                {
+                                                    <option value="@d.DepartmentID">@d.Department</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            Division<br />
+                                            <select id="division2" name="divisionid" class="form-control"></select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                        <div class="col-md-12">
+                                            @ViewBag.user Name<br />
+                                            <input type="text" class="form-control" name="Name" required />
+
+                                            <input type="hidden" name="UserType" value="@ViewBag.user" />
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-12">
+                                            Designation<br />
+                                            <input type="text" class="form-control" name="Designation" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <div class="col-md-12">
+                                            Mobile No.<br />
+                                            <input type="text" class="form-control" name="MobileNo" />
+                                        </div>
+                                    </div><div class="form-group">
+
+                                        <div class="col-md-12">
+                                            Email ID<br />
+                                            <input type="text" class="form-control" name="EmailID" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-12">
+                                            National ID<br />
+                                            <input type="text" class="form-control" name="NationalID" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-12">
+                                            Address<br />
+                                            <input type="text" class="form-control" name="Address" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class=" col-md-12">
+                                            <input type="submit" value="Create" class="btn btn-danger" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <br style="clear:both" />
+                        <div class="modal-footer">
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="@Url.Content("~/assets/js/jquery.min.js")"></script>
+
+    <script>
+    $(document).ready(function () { $(".editrow").hide(); });
+    function openrow(row) { $("#edit-" + row).show(2000); }
+    function updatedivision2() {
+        getdivision2($("#department2").val());
+    }
+    function getdivision2(departmentid) {
+        $.getJSON('@Url.Content("~/")App/getdivision/' + departmentid + '/?jsoncallback=?', function (data) {
+            var content = "";
+            $("#division2").empty();
+            $.each(data, function (key, value) {
+                $("#division2").append("<option value='" + data[key].DivisionID + "'>" + data[key].Division + "</option>");
+            });
+        });
+    }
+    </script>
+
+
+
+
+    <!-- Datatables-->
+                                            <script src="@Url.Content("~/assets/plugins/datatables/jquery.dataTables.min.js")"></script>
+                                            <script src="@Url.Content("~/assets/plugins/datatables/dataTables.bootstrap.js")"></script>
+                                            <script src="@Url.Content("~/assets/plugins/datatables/dataTables.buttons.min.js")"></script>
+                                            <script src="@Url.Content("~/assets/plugins/datatables/buttons.bootstrap.min.js")"></script>
+                                            <script src="@Url.Content("~/assets/plugins/datatables/jszip.min.js")"></script>
+                                            <script src="@Url.Content("~/assets/plugins/datatables/pdfmake.min.js")"></script>
+                                            <script src="@Url.Content("~/assets/plugins/datatables/vfs_fonts.js")"></script>
+                                            <script src="@Url.Content("~/assets/plugins/datatables/buttons.html5.min.js")"></script>
+                                            <script src="@Url.Content("~/assets/plugins/datatables/buttons.print.min.js")"></script>
+
+
+                                            <script src="@Url.Content("~/assets/pages/datatables.init.js")"></script>
+
+                                            <script src="@Url.Content("~/assets/js/bootstrap.min.js")"></script>
+                                            <script src="@Url.Content("~/assets/js/modernizr.min.js")"></script>
+                                            <script src="@Url.Content("~/assets/js/detect.js")"></script>
+                                            <script src="@Url.Content("~/assets/js/fastclick.js")"></script>
+                                            <script src="@Url.Content("~/assets/js/jquery.slimscroll.js")"></script>
+                                            <script src="@Url.Content("~/assets/js/jquery.blockUI.js")"></script>
+                                            <script src="@Url.Content("~/assets/js/waves.js")"></script>
+                                            <script src="@Url.Content("~/assets/js/wow.min.js")"></script>
+                                            <script src="@Url.Content("~/assets/js/jquery.nicescroll.js")"></script>
+                                            <script src="@Url.Content("~/assets/js/jquery.scrollTo.min.js")"></script>
+                                            <script src="@Url.Content("~/assets/js/app.js")"></script>

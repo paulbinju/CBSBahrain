@@ -1,0 +1,125 @@
+﻿<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+
+        <!--<div class="user-details">-->
+        <!--<div class="pull-left">-->
+        <!--<img src="@Url.Content("~/assets/images/users/avatar-1.jpg")" alt="" class="thumb-md img-circle">-->
+        <!--</div>-->
+        <!--<div class="user-info">-->
+        <!--<div class="dropdown">-->
+        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">David Cooper <span class="caret"></span></a>-->
+        <!--<ul class="dropdown-menu">-->
+        <!--<li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>-->
+        <!--<li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>-->
+        <!--<li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>-->
+        <!--<li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--<p class="text-muted m-0">Admin</p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--- Divider -->
+
+
+        <div id="sidebar-menu">
+            <ul>
+                <li class="menu-title">Menu</li>
+                <li>
+                    <a href="@Url.Content("~/")" class="waves-effect"><i class="mdi mdi-home"></i><span> Dashboard <span class="badge badge-primary pull-right">1</span></span></a>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-album"></i> <span> Vehicle User </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Content("~/User/Staff")">Staff</a></li>
+                        <li><a href="@Url.Content("~/User/Driver")">Driver</a></li>
+                        @*<li><a href="@Url.Content("~/User/Customer")">Customer</a></li>*@
+
+                    </ul>
+                </li>
+
+
+
+
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-album"></i> <span> Vehicle </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Content("~/Vehicle/All")">All</a></li>
+                        <li><a href="@Url.Content("~/Vehicle/Available")">Available</a></li>
+                        <li><a href="@Url.Content("~/Vehicle/Allocated")">Allocated</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-album"></i> <span> Traffic </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Content("~/TrafficContraventions")">Add Contravensions</a></li>
+                        <li><a href="@Url.Content("~/TrafficContraventionsView")">View Contravensions</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-album"></i> <span> Call Centre </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Content("~/Call/AddCall")">Add Call</a></li>
+                        <li><a href="@Url.Content("~/Call")">View Calls</a></li>
+                    </ul>
+                </li>
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-album"></i> <span> Garage </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Content("~/JobCard/AddJobCard")">Open Job Card</a></li>
+                        <li><a href="@Url.Content("~/JobCard")">View Job Cards</a></li>
+                    </ul>
+                </li>
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-album"></i> <span> Fuel Station </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Content("~/FuelStation/AddFuel")">Add Fuel</a></li>
+                        <li><a href="@Url.Content("~/FuelStation")">View</a></li>
+                    </ul>
+                </li>
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-album"></i> <span> Reports </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Content("~/Reports/InvoiceCompanywise/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))">Company </a></li>
+                        <li><a href="@Url.Content("~/Reports/InvoiceService/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))">Service Invoice</a></li>
+                        <li><a href="@Url.Content("~/Reports/InvoiceSparePart/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))">Spare Parts Invoice</a></li>
+                        <li><a href="@Url.Content("~/Reports/GarageService/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))">Garage Service </a></li>
+                        <li><a href="@Url.Content("~/Reports/GarageSparePart/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))">Garage Spare Parts </a></li>
+                        <li><a href="@Url.Content("~/Reports/Fuel/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))">Fuel </a></li>
+                        <li><a href="@Url.Content("~/Reports/FuelPetrol/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))">Petrol </a></li>
+                        <li><a href="@Url.Content("~/Reports/FuelDiesel/"+DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd")+"/"+DateTime.Now.ToString("yyyy-MM-dd"))">Diesel </a></li>
+</ul>
+                </li>
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-album"></i> <span> Masters </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                     
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Content("~/Department")">Department</a></li>
+                        <li><a href="@Url.Content("~/Division")">Division</a></li>
+                        <li><a href="@Url.Content("~/FMUser")">Software User</a></li>
+                        <li><a href="@Url.Content("~/VehicleGroup")">Vehicle Group</a></li>
+                        <li><a href="@Url.Content("~/VehicleType")">Vehicle Type</a></li>
+                        <li><a href="@Url.Content("~/Shop")">Company</a></li>
+                        <li><a href="@Url.Content("~/AutoBrand")">Auto Brand</a></li>
+                        <li><a href="@Url.Content("~/Insurance")">Insurance</a></li>
+                        <li><a href="@Url.Content("~/Service")">Service</a></li>
+                        <li><a href="@Url.Content("~/SparePart")">Spare Parts</a></li>
+                        <li><a href="@Url.Content("~/FuelType")">Fuel Type</a></li>
+                        <li><a href="@Url.Content("~/Status")">Status</a></li>
+                         
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div> <!-- end sidebarinner -->
+</div>
+
+
+ 

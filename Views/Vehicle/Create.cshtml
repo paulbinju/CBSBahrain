@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<script src="@Url.Content("~/assets/js/jquery.min.js")"></script>
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <button class="btn btn-primary pull-right" data-toggle="modal" href="#SparePartModal"><i class="icofont icofont-ui-add"></i>Add Spare Part</button>
+                            <h4 class="page-title">Spare Part</h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="page-content-wrapper ">
+
+            <div class="container">
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
+
+
+
+                                <table class="table">
+                                    <tr>
+                                        <th>Auto Brand</th>
+                                        <th>Part Code</th>
+                                        <th>Description</th>
+                                        <th>Available Quantity</th>
+                                        <th>Price</th>
+                                        <th>Modify</th>
+
+                                    </tr>
+
+                                    @foreach (var item in ViewBag.SparePart)
+                                    {
+                                        <tr>
+                                            <td>@item.AutoBrand</td>
+                                            <td>
+                                                @item.Code
+                                            </td>
+                                            <td>
+                                                @item.Description
+                                            </td>
+                                            <td>
+                                                @item.AvailableQuantity
+                                            </td>
+                                            <td>
+                                                @item.Price
+                                            </td>
+                                            <td>
+                                                <a onclick="openrow(@item.SparePartID)" style="cursor:pointer" class="pcoded-badge label label-warning"><i class="fa fa-pencil"></i> Edit</a>
+
+                                            </td>
+                                        </tr>
+                                        using (Html.BeginForm("Edit", "SparePart"))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.ValidationSummary(true)
+                                            <tr id="edit-@item.SparePartID" class="editrow">
+                                                <td>
+
+                                                    <select class="form-control" name="AutoBrandID">
+
+                                                        @foreach (var d in ViewBag.AutoBrand)
+                                                        {
+                                                            if (item.AutoBrandID != d.AutoBrandID)
+                                                            {
+                                                                <option value="@d.AutoBrandID">@d.AutoBrand</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option selected value="@d.AutoBrandID">@d.AutoBrand</option>
+                                                            }
+                                                        }
+                                                    </select>
+
+
+
+                                                </td>
+                                                <td>
+                                                    <input required class="form-control cke_required" type="text" name="Code" value="@item.Code" />
+
+
+                                                </td>
+                                                <td>
+                                                    <input required class="form-control cke_required" type="text" name="Description" value="@item.Description" />
+                                                    <input type="hidden" name="SparePartID" value="@item.SparePartID" />
+
+                                                </td>
+                                                <td>
+                                                    <input required class="form-control cke_required" type="text" name="AvailableQuantity" value="@item.AvailableQuantity" />
+                                                </td>
+                                                <td>
+                                                    <input required class="form-control cke_required" type="number" step="any" name="Price" value="@item.Price" />
+                                                </td>
+                                                <td>
+
+                                                    <button class="pcoded-badge label label-success"><i class="fa fa-check"></i> Update</button>
+
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+
+
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

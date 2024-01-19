@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FleetManagerV2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Alert_T">
+    <Key>
+      <PropertyRef Name="AlertID" />
+    </Key>
+    <Property Name="AlertID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="Alert" Type="ntext" />
+    <Property Name="DueDate" Type="smalldatetime" />
+    <Property Name="DOC" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="AutoBrand_T">
+    <Key>
+      <PropertyRef Name="AutoBrandID" />
+    </Key>
+    <Property Name="AutoBrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="Make" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="Year" Type="int" />
+  </EntityType>
+  <EntityType Name="Bill_T">
+    <Key>
+      <PropertyRef Name="BillID" />
+    </Key>
+    <Property Name="BillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="BillNo" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="BillDate" Type="smalldatetime" />
+    <Property Name="ShopID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="DOC" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Call_T">
+    <Key>
+      <PropertyRef Name="CallID" />
+    </Key>
+    <Property Name="CallID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="FMUserID" Type="int" />
+    <Property Name="JobCardGenerated" Type="bit" />
+    <Property Name="ReportedOn" Type="smalldatetime" />
+    <Property Name="StartedOn" Type="smalldatetime" />
+    <Property Name="CompletedOn" Type="smalldatetime" />
+    <Property Name="ExternalGarage" Type="bit" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="Note" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Department_T">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="Department" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Division_T">
+    <Key>
+      <PropertyRef Name="DivisionID" />
+    </Key>
+    <Property Name="DivisionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="DepartmentID" Type="int" />
+    <Property Name="Division" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="FleetCompany_T">
+    <Key>
+      <PropertyRef Name="FleetCompanyID" />
+    </Key>
+    <Property Name="FleetCompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Currency" Type="char" MaxLength="10" />
+    <Property Name="Activated" Type="bit" />
+    <Property Name="SPID" Type="nvarchar" MaxLength="8" />
+    <Property Name="Source" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOC" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="FMUser_T">
+    <Key>
+      <PropertyRef Name="FMUserID" />
+    </Key>
+    <Property Name="FMUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="FMPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepartmentID" Type="int" />
+    <Property Name="DivisionID" Type="int" />
+  </EntityType>
+  <EntityType Name="FuelConsumption_T">
+    <Key>
+      <PropertyRef Name="FuelConsumptionID" />
+    </Key>
+    <Property Name="FuelConsumptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="Odometer" Type="int" />
+    <Property Name="FuelTypeID" Type="int" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="FillingDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="FuelType_T">
+    <Key>
+      <PropertyRef Name="FuelTypeID" />
+    </Key>
+    <Property Name="FuelTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="FuelType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Insurance_T">
+    <Key>
+      <PropertyRef Name="InsuranceID" />
+    </Key>
+    <Property Name="InsuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="Insurance" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="JobCard_T">
+    <Key>
+      <PropertyRef Name="JobCardID" />
+    </Key>
+    <Property Name="JobCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="CallID" Type="int" />
+    <Property Name="JobStarted" Type="smalldatetime" />
+    <Property Name="JobEnded" Type="smalldatetime" />
+    <Property Name="LabourHours" Type="int" />
+    <Property Name="TotalCost" Type="decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="Role_T">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SalesPerson_T">
+    <Key>
+      <PropertyRef Name="SalesPersonID" />
+    </Key>
+    <Property Name="SalesPersonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UniqueID" Type="uniqueidentifier" />
+    <Property Name="SPID" Type="nvarchar" MaxLength="8" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOC" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Service_T">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Shop_T">
+    <Key>
+      <PropertyRef Name="ShopID" />
+    </Key>
+    <Property Name="ShopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="ShopName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SparePart_T">
+    <Key>
+      <PropertyRef Name="SparePartID" />
+    </Key>
+    <Property Name="SparePartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="Code" Type="nchar" MaxLength="10" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="AvailableQuantity" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="SparePartAutoBrand_T">
+    <Key>
+      <PropertyRef Name="SparePartAutoBrandID" />
+    </Key>
+    <Property Name="SparePartAutoBrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SparePartID" Type="int" />
+    <Property Name="AutoBrandID" Type="int" />
+  </EntityType>
+  <EntityType Name="SpareServiceDetails_T">
+    <Key>
+      <PropertyRef Name="SpareServiceDetailsID" />
+    </Key>
+    <Property Name="SpareServiceDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="BillID" Type="int" />
+    <Property Name="JobCardID" Type="int" />
+    <Property Name="SparePart" Type="bit" />
+    <Property Name="SparePartID" Type="int" />
+    <Property Name="ServiceID" Type="int" />
+    <Property Name="LabourHour" Type="int" />
+    <Property Name="Quantity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="Status_T">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" Nullable="false" />
+    <Property Name="StatusTypeID" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StatusType_T">
+    <Key>
+      <PropertyRef Name="StatusTypeID" />
+    </Key>
+    <Property Name="StatusTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Subscription_T">
+    <Key>
+      <PropertyRef Name="SubscriptionID" />
+    </Key>
+    <Property Name="SubscriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="StartDate" Type="smalldatetime" />
+    <Property Name="EndDate" Type="smalldatetime" />
+    <Property Name="Trial" Type="bit" />
+  </EntityType>
+  <EntityType Name="TrafficContraventions_T">
+    <Key>
+      <PropertyRef Name="TrafficContraventionID" />
+    </Key>
+    <Property Name="TrafficContraventionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="TrafficContraventionDate" Type="smalldatetime" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="User_T">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="UserType" Type="char" MaxLength="10" />
+    <Property Name="DepartmentID" Type="int" />
+    <Property Name="DivisionID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="NationalID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="ntext" />
+    <Property Name="DOC" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Vehicle_T">
+    <Key>
+      <PropertyRef Name="VehicleID" />
+    </Key>
+    <Property Name="VehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleNoName" Type="nvarchar" MaxLength="50" />
+    <Property Name="VehicleNo" Type="int" />
+    <Property Name="VehicleGroupID" Type="int" />
+    <Property Name="VehicleTypeID" Type="int" />
+    <Property Name="RegistrationNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="AutoBrandID" Type="int" />
+    <Property Name="PurchaseDate" Type="smalldatetime" />
+    <Property Name="PurchaseAmount" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="SoldDate" Type="smalldatetime" />
+    <Property Name="SoldAmount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Life" Type="int" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="ServiceFrequency" Type="int" />
+    <Property Name="FuelTypeID" Type="int" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="GPSURL" Type="nvarchar(max)" />
+    <Property Name="Note" Type="ntext" />
+    <Property Name="DOC" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="VehicleGroup_T">
+    <Key>
+      <PropertyRef Name="VehicleGroupID" />
+    </Key>
+    <Property Name="VehicleGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleGroup" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehicle-Insurance_T">
+    <Key>
+      <PropertyRef Name="VehicleInsuranceID" />
+    </Key>
+    <Property Name="VehicleInsuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="InsuranceID" Type="int" />
+    <Property Name="StartDate" Type="smalldatetime" />
+    <Property Name="EndDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="VehicleRegistration_T">
+    <Key>
+      <PropertyRef Name="VehicleRegistrationID" />
+    </Key>
+    <Property Name="VehicleRegistrationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="StartDate" Type="smalldatetime" />
+    <Property Name="EndDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="VehicleStatus_T">
+    <Key>
+      <PropertyRef Name="VehicleStatusID" />
+    </Key>
+    <Property Name="VehicleStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" Nullable="false" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="DOC" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="VehicleType_T">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vehicle-User_T">
+    <Key>
+      <PropertyRef Name="VehicleDriverID" />
+    </Key>
+    <Property Name="VehicleDriverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetCompanyID" Type="int" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="StartDate" Type="smalldatetime" />
+    <Property Name="EndDate" Type="smalldatetime" />
+    <Property Name="RatePerDay" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="Note" Type="ntext" />
+    <Property Name="DOC" Type="smalldatetime" />
+  </EntityType>
+  <Function Name="vehiclegroupname" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FleetCompanyID" Type="int" Mode="In" />
+    <Parameter Name="VehicleGroupID" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="FleetManagerV2ModelStoreContainer">
+    <EntitySet Name="Alert_T" EntityType="Self.Alert_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AutoBrand_T" EntityType="Self.AutoBrand_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bill_T" EntityType="Self.Bill_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Call_T" EntityType="Self.Call_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department_T" EntityType="Self.Department_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Division_T" EntityType="Self.Division_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FleetCompany_T" EntityType="Self.FleetCompany_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FMUser_T" EntityType="Self.FMUser_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FuelConsumption_T" EntityType="Self.FuelConsumption_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FuelType_T" EntityType="Self.FuelType_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Insurance_T" EntityType="Self.Insurance_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobCard_T" EntityType="Self.JobCard_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role_T" EntityType="Self.Role_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalesPerson_T" EntityType="Self.SalesPerson_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service_T" EntityType="Self.Service_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shop_T" EntityType="Self.Shop_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SparePart_T" EntityType="Self.SparePart_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SparePartAutoBrand_T" EntityType="Self.SparePartAutoBrand_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SpareServiceDetails_T" EntityType="Self.SpareServiceDetails_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status_T" EntityType="Self.Status_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusType_T" EntityType="Self.StatusType_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subscription_T" EntityType="Self.Subscription_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrafficContraventions_T" EntityType="Self.TrafficContraventions_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_T" EntityType="Self.User_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle_T" EntityType="Self.Vehicle_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleGroup_T" EntityType="Self.VehicleGroup_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle-Insurance_T" EntityType="Self.Vehicle-Insurance_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleRegistration_T" EntityType="Self.VehicleRegistration_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleStatus_T" EntityType="Self.VehicleStatus_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleType_T" EntityType="Self.VehicleType_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle-User_T" EntityType="Self.Vehicle-User_T" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

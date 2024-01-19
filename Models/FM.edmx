@@ -1,0 +1,1209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FleetManagerV2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alert_T">
+          <Key>
+            <PropertyRef Name="AlertID" />
+          </Key>
+          <Property Name="AlertID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="Alert" Type="ntext" />
+          <Property Name="DueDate" Type="smalldatetime" />
+          <Property Name="DOC" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="AutoBrand_T">
+          <Key>
+            <PropertyRef Name="AutoBrandID" />
+          </Key>
+          <Property Name="AutoBrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="Make" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year" Type="int" />
+        </EntityType>
+        <EntityType Name="Bill_T">
+          <Key>
+            <PropertyRef Name="BillID" />
+          </Key>
+          <Property Name="BillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="BillNo" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="BillDate" Type="smalldatetime" />
+          <Property Name="ShopID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="3" />
+          <Property Name="DOC" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Call_T">
+          <Key>
+            <PropertyRef Name="CallID" />
+          </Key>
+          <Property Name="CallID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="FMUserID" Type="int" />
+          <Property Name="JobCardGenerated" Type="bit" />
+          <Property Name="ReportedOn" Type="smalldatetime" />
+          <Property Name="StartedOn" Type="smalldatetime" />
+          <Property Name="CompletedOn" Type="smalldatetime" />
+          <Property Name="ExternalGarage" Type="bit" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="Note" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Department_T">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="Department" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Division_T">
+          <Key>
+            <PropertyRef Name="DivisionID" />
+          </Key>
+          <Property Name="DivisionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="DepartmentID" Type="int" />
+          <Property Name="Division" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="FleetCompany_T">
+          <Key>
+            <PropertyRef Name="FleetCompanyID" />
+          </Key>
+          <Property Name="FleetCompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Currency" Type="char" MaxLength="10" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="SPID" Type="nvarchar" MaxLength="8" />
+          <Property Name="Source" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOC" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="FMUser_T">
+          <Key>
+            <PropertyRef Name="FMUserID" />
+          </Key>
+          <Property Name="FMUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="FMPassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartmentID" Type="int" />
+          <Property Name="DivisionID" Type="int" />
+        </EntityType>
+        <EntityType Name="FuelConsumption_T">
+          <Key>
+            <PropertyRef Name="FuelConsumptionID" />
+          </Key>
+          <Property Name="FuelConsumptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="Odometer" Type="int" />
+          <Property Name="FuelTypeID" Type="int" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="FillingDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="FuelType_T">
+          <Key>
+            <PropertyRef Name="FuelTypeID" />
+          </Key>
+          <Property Name="FuelTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="FuelType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Insurance_T">
+          <Key>
+            <PropertyRef Name="InsuranceID" />
+          </Key>
+          <Property Name="InsuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="Insurance" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="JobCard_T">
+          <Key>
+            <PropertyRef Name="JobCardID" />
+          </Key>
+          <Property Name="JobCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="CallID" Type="int" />
+          <Property Name="JobStarted" Type="smalldatetime" />
+          <Property Name="JobEnded" Type="smalldatetime" />
+          <Property Name="LabourHours" Type="int" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="Role_T">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SalesPerson_T">
+          <Key>
+            <PropertyRef Name="SalesPersonID" />
+          </Key>
+          <Property Name="SalesPersonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UniqueID" Type="uniqueidentifier" />
+          <Property Name="SPID" Type="nvarchar" MaxLength="8" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOC" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Service_T">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Shop_T">
+          <Key>
+            <PropertyRef Name="ShopID" />
+          </Key>
+          <Property Name="ShopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="ShopName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SparePart_T">
+          <Key>
+            <PropertyRef Name="SparePartID" />
+          </Key>
+          <Property Name="SparePartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="Code" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="ntext" />
+          <Property Name="AvailableQuantity" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="SparePartAutoBrand_T">
+          <Key>
+            <PropertyRef Name="SparePartAutoBrandID" />
+          </Key>
+          <Property Name="SparePartAutoBrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SparePartID" Type="int" />
+          <Property Name="AutoBrandID" Type="int" />
+        </EntityType>
+        <EntityType Name="SpareServiceDetails_T">
+          <Key>
+            <PropertyRef Name="SpareServiceDetailsID" />
+          </Key>
+          <Property Name="SpareServiceDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="BillID" Type="int" />
+          <Property Name="JobCardID" Type="int" />
+          <Property Name="SparePart" Type="bit" />
+          <Property Name="SparePartID" Type="int" />
+          <Property Name="ServiceID" Type="int" />
+          <Property Name="LabourHour" Type="int" />
+          <Property Name="Quantity" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="Status_T">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" Nullable="false" />
+          <Property Name="StatusTypeID" Type="int" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="StatusType_T">
+          <Key>
+            <PropertyRef Name="StatusTypeID" />
+          </Key>
+          <Property Name="StatusTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Subscription_T">
+          <Key>
+            <PropertyRef Name="SubscriptionID" />
+          </Key>
+          <Property Name="SubscriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="StartDate" Type="smalldatetime" />
+          <Property Name="EndDate" Type="smalldatetime" />
+          <Property Name="Trial" Type="bit" />
+        </EntityType>
+        <EntityType Name="TrafficContraventions_T">
+          <Key>
+            <PropertyRef Name="TrafficContraventionID" />
+          </Key>
+          <Property Name="TrafficContraventionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="TrafficContraventionDate" Type="smalldatetime" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="User_T">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="UserType" Type="char" MaxLength="10" />
+          <Property Name="DepartmentID" Type="int" />
+          <Property Name="DivisionID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="NationalID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="ntext" />
+          <Property Name="DOC" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Vehicle_T">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleNoName" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleNo" Type="int" />
+          <Property Name="VehicleGroupID" Type="int" />
+          <Property Name="VehicleTypeID" Type="int" />
+          <Property Name="RegistrationNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="AutoBrandID" Type="int" />
+          <Property Name="PurchaseDate" Type="smalldatetime" />
+          <Property Name="PurchaseAmount" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="SoldDate" Type="smalldatetime" />
+          <Property Name="SoldAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Life" Type="int" />
+          <Property Name="Color" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServiceFrequency" Type="int" />
+          <Property Name="FuelTypeID" Type="int" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="GPSURL" Type="nvarchar(max)" />
+          <Property Name="Note" Type="ntext" />
+          <Property Name="DOC" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="VehicleGroup_T">
+          <Key>
+            <PropertyRef Name="VehicleGroupID" />
+          </Key>
+          <Property Name="VehicleGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleGroup" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vehicle-Insurance_T">
+          <Key>
+            <PropertyRef Name="VehicleInsuranceID" />
+          </Key>
+          <Property Name="VehicleInsuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="InsuranceID" Type="int" />
+          <Property Name="StartDate" Type="smalldatetime" />
+          <Property Name="EndDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="VehicleRegistration_T">
+          <Key>
+            <PropertyRef Name="VehicleRegistrationID" />
+          </Key>
+          <Property Name="VehicleRegistrationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="StartDate" Type="smalldatetime" />
+          <Property Name="EndDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="VehicleStatus_T">
+          <Key>
+            <PropertyRef Name="VehicleStatusID" />
+          </Key>
+          <Property Name="VehicleStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="DOC" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="VehicleType_T">
+          <Key>
+            <PropertyRef Name="VehicleTypeID" />
+          </Key>
+          <Property Name="VehicleTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Vehicle-User_T">
+          <Key>
+            <PropertyRef Name="VehicleDriverID" />
+          </Key>
+          <Property Name="VehicleDriverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetCompanyID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="StartDate" Type="smalldatetime" />
+          <Property Name="EndDate" Type="smalldatetime" />
+          <Property Name="RatePerDay" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Note" Type="ntext" />
+          <Property Name="DOC" Type="smalldatetime" />
+        </EntityType>
+        <Function Name="vehiclegroupname" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FleetCompanyID" Type="int" Mode="In" />
+          <Parameter Name="VehicleGroupID" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="FleetManagerV2ModelStoreContainer">
+          <EntitySet Name="Alert_T" EntityType="Self.Alert_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AutoBrand_T" EntityType="Self.AutoBrand_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bill_T" EntityType="Self.Bill_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Call_T" EntityType="Self.Call_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department_T" EntityType="Self.Department_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Division_T" EntityType="Self.Division_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FleetCompany_T" EntityType="Self.FleetCompany_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FMUser_T" EntityType="Self.FMUser_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FuelConsumption_T" EntityType="Self.FuelConsumption_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FuelType_T" EntityType="Self.FuelType_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Insurance_T" EntityType="Self.Insurance_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobCard_T" EntityType="Self.JobCard_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role_T" EntityType="Self.Role_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesPerson_T" EntityType="Self.SalesPerson_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service_T" EntityType="Self.Service_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shop_T" EntityType="Self.Shop_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SparePart_T" EntityType="Self.SparePart_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SparePartAutoBrand_T" EntityType="Self.SparePartAutoBrand_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SpareServiceDetails_T" EntityType="Self.SpareServiceDetails_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status_T" EntityType="Self.Status_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusType_T" EntityType="Self.StatusType_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subscription_T" EntityType="Self.Subscription_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrafficContraventions_T" EntityType="Self.TrafficContraventions_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_T" EntityType="Self.User_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicle_T" EntityType="Self.Vehicle_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleGroup_T" EntityType="Self.VehicleGroup_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicle-Insurance_T" EntityType="Self.Vehicle-Insurance_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleRegistration_T" EntityType="Self.VehicleRegistration_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleStatus_T" EntityType="Self.VehicleStatus_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleType_T" EntityType="Self.VehicleType_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicle-User_T" EntityType="Self.Vehicle-User_T" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FleetManagerV2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Alert_T">
+          <Key>
+            <PropertyRef Name="AlertID" />
+          </Key>
+          <Property Name="AlertID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="Alert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DueDate" Type="DateTime" Precision="0" />
+          <Property Name="DOC" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="AutoBrand_T">
+          <Key>
+            <PropertyRef Name="AutoBrandID" />
+          </Key>
+          <Property Name="AutoBrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="Make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bill_T">
+          <Key>
+            <PropertyRef Name="BillID" />
+          </Key>
+          <Property Name="BillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="BillNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="BillDate" Type="DateTime" Precision="0" />
+          <Property Name="ShopID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="DOC" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Call_T">
+          <Key>
+            <PropertyRef Name="CallID" />
+          </Key>
+          <Property Name="CallID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="FMUserID" Type="Int32" />
+          <Property Name="JobCardGenerated" Type="Boolean" />
+          <Property Name="ReportedOn" Type="DateTime" Precision="0" />
+          <Property Name="StartedOn" Type="DateTime" Precision="0" />
+          <Property Name="CompletedOn" Type="DateTime" Precision="0" />
+          <Property Name="ExternalGarage" Type="Boolean" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Department_T">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="Department" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Division_T">
+          <Key>
+            <PropertyRef Name="DivisionID" />
+          </Key>
+          <Property Name="DivisionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="DepartmentID" Type="Int32" />
+          <Property Name="Division" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FleetCompany_T">
+          <Key>
+            <PropertyRef Name="FleetCompanyID" />
+          </Key>
+          <Property Name="FleetCompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Currency" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="SPID" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOC" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="FMUser_T">
+          <Key>
+            <PropertyRef Name="FMUserID" />
+          </Key>
+          <Property Name="FMUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FMPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentID" Type="Int32" />
+          <Property Name="DivisionID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FuelConsumption_T">
+          <Key>
+            <PropertyRef Name="FuelConsumptionID" />
+          </Key>
+          <Property Name="FuelConsumptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="Odometer" Type="Int32" />
+          <Property Name="FuelTypeID" Type="Int32" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="FillingDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="FuelType_T">
+          <Key>
+            <PropertyRef Name="FuelTypeID" />
+          </Key>
+          <Property Name="FuelTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="FuelType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Insurance_T">
+          <Key>
+            <PropertyRef Name="InsuranceID" />
+          </Key>
+          <Property Name="InsuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="Insurance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JobCard_T">
+          <Key>
+            <PropertyRef Name="JobCardID" />
+          </Key>
+          <Property Name="JobCardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="CallID" Type="Int32" />
+          <Property Name="JobStarted" Type="DateTime" Precision="0" />
+          <Property Name="JobEnded" Type="DateTime" Precision="0" />
+          <Property Name="LabourHours" Type="Int32" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="Role_T">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SalesPerson_T">
+          <Key>
+            <PropertyRef Name="SalesPersonID" />
+          </Key>
+          <Property Name="SalesPersonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UniqueID" Type="Guid" />
+          <Property Name="SPID" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOC" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Service_T">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Shop_T">
+          <Key>
+            <PropertyRef Name="ShopID" />
+          </Key>
+          <Property Name="ShopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="ShopName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SparePart_T">
+          <Key>
+            <PropertyRef Name="SparePartID" />
+          </Key>
+          <Property Name="SparePartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AvailableQuantity" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="SpareServiceDetails_T">
+          <Key>
+            <PropertyRef Name="SpareServiceDetailsID" />
+          </Key>
+          <Property Name="SpareServiceDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="BillID" Type="Int32" />
+          <Property Name="JobCardID" Type="Int32" />
+          <Property Name="SparePart" Type="Boolean" />
+          <Property Name="SparePartID" Type="Int32" />
+          <Property Name="ServiceID" Type="Int32" />
+          <Property Name="LabourHour" Type="Int32" />
+          <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="Status_T">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" Nullable="false" />
+          <Property Name="StatusTypeID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="StatusType_T">
+          <Key>
+            <PropertyRef Name="StatusTypeID" />
+          </Key>
+          <Property Name="StatusTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Subscription_T">
+          <Key>
+            <PropertyRef Name="SubscriptionID" />
+          </Key>
+          <Property Name="SubscriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Trial" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TrafficContraventions_T">
+          <Key>
+            <PropertyRef Name="TrafficContraventionID" />
+          </Key>
+          <Property Name="TrafficContraventionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="TrafficContraventionDate" Type="DateTime" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User_T">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="UserType" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="DepartmentID" Type="Int32" />
+          <Property Name="DivisionID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NationalID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DOC" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Vehicle_T">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleNoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleNo" Type="Int32" />
+          <Property Name="VehicleGroupID" Type="Int32" />
+          <Property Name="VehicleTypeID" Type="Int32" />
+          <Property Name="RegistrationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AutoBrandID" Type="Int32" />
+          <Property Name="PurchaseDate" Type="DateTime" Precision="0" />
+          <Property Name="PurchaseAmount" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="SoldDate" Type="DateTime" Precision="0" />
+          <Property Name="SoldAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Life" Type="Int32" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceFrequency" Type="Int32" />
+          <Property Name="FuelTypeID" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="GPSURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DOC" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="VehicleGroup_T">
+          <Key>
+            <PropertyRef Name="VehicleGroupID" />
+          </Key>
+          <Property Name="VehicleGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vehicle_Insurance_T">
+          <Key>
+            <PropertyRef Name="VehicleInsuranceID" />
+          </Key>
+          <Property Name="VehicleInsuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="InsuranceID" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="VehicleRegistration_T">
+          <Key>
+            <PropertyRef Name="VehicleRegistrationID" />
+          </Key>
+          <Property Name="VehicleRegistrationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="VehicleStatus_T">
+          <Key>
+            <PropertyRef Name="VehicleStatusID" />
+          </Key>
+          <Property Name="VehicleStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="DOC" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="VehicleType_T">
+          <Key>
+            <PropertyRef Name="VehicleTypeID" />
+          </Key>
+          <Property Name="VehicleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Vehicle_User_T">
+          <Key>
+            <PropertyRef Name="VehicleDriverID" />
+          </Key>
+          <Property Name="VehicleDriverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetCompanyID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="RatePerDay" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DOC" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="FleetManagerV2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alert_T" EntityType="Self.Alert_T" />
+          <EntitySet Name="AutoBrand_T" EntityType="Self.AutoBrand_T" />
+          <EntitySet Name="Bill_T" EntityType="Self.Bill_T" />
+          <EntitySet Name="Call_T" EntityType="Self.Call_T" />
+          <EntitySet Name="Department_T" EntityType="Self.Department_T" />
+          <EntitySet Name="Division_T" EntityType="Self.Division_T" />
+          <EntitySet Name="FleetCompany_T" EntityType="Self.FleetCompany_T" />
+          <EntitySet Name="FMUser_T" EntityType="Self.FMUser_T" />
+          <EntitySet Name="FuelConsumption_T" EntityType="Self.FuelConsumption_T" />
+          <EntitySet Name="FuelType_T" EntityType="Self.FuelType_T" />
+          <EntitySet Name="Insurance_T" EntityType="Self.Insurance_T" />
+          <EntitySet Name="JobCard_T" EntityType="Self.JobCard_T" />
+          <EntitySet Name="Role_T" EntityType="Self.Role_T" />
+          <EntitySet Name="SalesPerson_T" EntityType="Self.SalesPerson_T" />
+          <EntitySet Name="Service_T" EntityType="Self.Service_T" />
+          <EntitySet Name="Shop_T" EntityType="Self.Shop_T" />
+          <EntitySet Name="SparePart_T" EntityType="Self.SparePart_T" />
+          <EntitySet Name="SpareServiceDetails_T" EntityType="Self.SpareServiceDetails_T" />
+          <EntitySet Name="Status_T" EntityType="Self.Status_T" />
+          <EntitySet Name="StatusType_T" EntityType="Self.StatusType_T" />
+          <EntitySet Name="Subscription_T" EntityType="Self.Subscription_T" />
+          <EntitySet Name="TrafficContraventions_T" EntityType="Self.TrafficContraventions_T" />
+          <EntitySet Name="User_T" EntityType="Self.User_T" />
+          <EntitySet Name="Vehicle_T" EntityType="Self.Vehicle_T" />
+          <EntitySet Name="VehicleGroup_T" EntityType="Self.VehicleGroup_T" />
+          <EntitySet Name="Vehicle_Insurance_T" EntityType="Self.Vehicle_Insurance_T" />
+          <EntitySet Name="VehicleRegistration_T" EntityType="Self.VehicleRegistration_T" />
+          <EntitySet Name="VehicleStatus_T" EntityType="Self.VehicleStatus_T" />
+          <EntitySet Name="VehicleType_T" EntityType="Self.VehicleType_T" />
+          <EntitySet Name="Vehicle_User_T" EntityType="Self.Vehicle_User_T" />
+          <FunctionImport Name="vehiclegroupname" ReturnType="Collection(String)">
+            <Parameter Name="FleetCompanyID" Mode="In" Type="Int32" />
+            <Parameter Name="VehicleGroupID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="SparePartAutoBrand_T" EntityType="FleetManagerV2Model.SparePartAutoBrand_T" />
+        </EntityContainer>
+        <EntityType Name="SparePartAutoBrand_T">
+          <Key>
+            <PropertyRef Name="SparePartAutoBrandID" />
+          </Key>
+          <Property Name="SparePartAutoBrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SparePartID" Type="Int32" />
+          <Property Name="AutoBrandID" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FleetManagerV2ModelStoreContainer" CdmEntityContainer="FleetManagerV2Entities">
+          <EntitySetMapping Name="Alert_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Alert_T">
+              <MappingFragment StoreEntitySet="Alert_T">
+                <ScalarProperty Name="AlertID" ColumnName="AlertID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="Alert" ColumnName="Alert" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AutoBrand_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.AutoBrand_T">
+              <MappingFragment StoreEntitySet="AutoBrand_T">
+                <ScalarProperty Name="AutoBrandID" ColumnName="AutoBrandID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bill_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Bill_T">
+              <MappingFragment StoreEntitySet="Bill_T">
+                <ScalarProperty Name="BillID" ColumnName="BillID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+                <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+                <ScalarProperty Name="ShopID" ColumnName="ShopID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Call_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Call_T">
+              <MappingFragment StoreEntitySet="Call_T">
+                <ScalarProperty Name="CallID" ColumnName="CallID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="FMUserID" ColumnName="FMUserID" />
+                <ScalarProperty Name="JobCardGenerated" ColumnName="JobCardGenerated" />
+                <ScalarProperty Name="ReportedOn" ColumnName="ReportedOn" />
+                <ScalarProperty Name="StartedOn" ColumnName="StartedOn" />
+                <ScalarProperty Name="CompletedOn" ColumnName="CompletedOn" />
+                <ScalarProperty Name="ExternalGarage" ColumnName="ExternalGarage" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Department_T">
+              <MappingFragment StoreEntitySet="Department_T">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Division_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Division_T">
+              <MappingFragment StoreEntitySet="Division_T">
+                <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FleetCompany_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.FleetCompany_T">
+              <MappingFragment StoreEntitySet="FleetCompany_T">
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="SPID" ColumnName="SPID" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FMUser_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.FMUser_T">
+              <MappingFragment StoreEntitySet="FMUser_T">
+                <ScalarProperty Name="FMUserID" ColumnName="FMUserID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FMPassword" ColumnName="FMPassword" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FuelConsumption_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.FuelConsumption_T">
+              <MappingFragment StoreEntitySet="FuelConsumption_T">
+                <ScalarProperty Name="FuelConsumptionID" ColumnName="FuelConsumptionID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="Odometer" ColumnName="Odometer" />
+                <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="FillingDate" ColumnName="FillingDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FuelType_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.FuelType_T">
+              <MappingFragment StoreEntitySet="FuelType_T">
+                <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Insurance_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Insurance_T">
+              <MappingFragment StoreEntitySet="Insurance_T">
+                <ScalarProperty Name="InsuranceID" ColumnName="InsuranceID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="Insurance" ColumnName="Insurance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobCard_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.JobCard_T">
+              <MappingFragment StoreEntitySet="JobCard_T">
+                <ScalarProperty Name="JobCardID" ColumnName="JobCardID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="CallID" ColumnName="CallID" />
+                <ScalarProperty Name="JobStarted" ColumnName="JobStarted" />
+                <ScalarProperty Name="JobEnded" ColumnName="JobEnded" />
+                <ScalarProperty Name="LabourHours" ColumnName="LabourHours" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Role_T">
+              <MappingFragment StoreEntitySet="Role_T">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesPerson_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.SalesPerson_T">
+              <MappingFragment StoreEntitySet="SalesPerson_T">
+                <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
+                <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+                <ScalarProperty Name="SPID" ColumnName="SPID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Service_T">
+              <MappingFragment StoreEntitySet="Service_T">
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shop_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Shop_T">
+              <MappingFragment StoreEntitySet="Shop_T">
+                <ScalarProperty Name="ShopID" ColumnName="ShopID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SparePart_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.SparePart_T">
+              <MappingFragment StoreEntitySet="SparePart_T">
+                <ScalarProperty Name="SparePartID" ColumnName="SparePartID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AvailableQuantity" ColumnName="AvailableQuantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpareServiceDetails_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.SpareServiceDetails_T">
+              <MappingFragment StoreEntitySet="SpareServiceDetails_T">
+                <ScalarProperty Name="SpareServiceDetailsID" ColumnName="SpareServiceDetailsID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="BillID" ColumnName="BillID" />
+                <ScalarProperty Name="JobCardID" ColumnName="JobCardID" />
+                <ScalarProperty Name="SparePart" ColumnName="SparePart" />
+                <ScalarProperty Name="SparePartID" ColumnName="SparePartID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="LabourHour" ColumnName="LabourHour" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Status_T">
+              <MappingFragment StoreEntitySet="Status_T">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="StatusTypeID" ColumnName="StatusTypeID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusType_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.StatusType_T">
+              <MappingFragment StoreEntitySet="StatusType_T">
+                <ScalarProperty Name="StatusTypeID" ColumnName="StatusTypeID" />
+                <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscription_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Subscription_T">
+              <MappingFragment StoreEntitySet="Subscription_T">
+                <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Trial" ColumnName="Trial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrafficContraventions_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.TrafficContraventions_T">
+              <MappingFragment StoreEntitySet="TrafficContraventions_T">
+                <ScalarProperty Name="TrafficContraventionID" ColumnName="TrafficContraventionID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TrafficContraventionDate" ColumnName="TrafficContraventionDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.User_T">
+              <MappingFragment StoreEntitySet="User_T">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicle_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Vehicle_T">
+              <MappingFragment StoreEntitySet="Vehicle_T">
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleNoName" ColumnName="VehicleNoName" />
+                <ScalarProperty Name="VehicleNo" ColumnName="VehicleNo" />
+                <ScalarProperty Name="VehicleGroupID" ColumnName="VehicleGroupID" />
+                <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="AutoBrandID" ColumnName="AutoBrandID" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+                <ScalarProperty Name="PurchaseAmount" ColumnName="PurchaseAmount" />
+                <ScalarProperty Name="SoldDate" ColumnName="SoldDate" />
+                <ScalarProperty Name="SoldAmount" ColumnName="SoldAmount" />
+                <ScalarProperty Name="Life" ColumnName="Life" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="ServiceFrequency" ColumnName="ServiceFrequency" />
+                <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="GPSURL" ColumnName="GPSURL" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleGroup_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.VehicleGroup_T">
+              <MappingFragment StoreEntitySet="VehicleGroup_T">
+                <ScalarProperty Name="VehicleGroupID" ColumnName="VehicleGroupID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleGroup" ColumnName="VehicleGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicle_Insurance_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Vehicle_Insurance_T">
+              <MappingFragment StoreEntitySet="Vehicle-Insurance_T">
+                <ScalarProperty Name="VehicleInsuranceID" ColumnName="VehicleInsuranceID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="InsuranceID" ColumnName="InsuranceID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleRegistration_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.VehicleRegistration_T">
+              <MappingFragment StoreEntitySet="VehicleRegistration_T">
+                <ScalarProperty Name="VehicleRegistrationID" ColumnName="VehicleRegistrationID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleStatus_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.VehicleStatus_T">
+              <MappingFragment StoreEntitySet="VehicleStatus_T">
+                <ScalarProperty Name="VehicleStatusID" ColumnName="VehicleStatusID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleType_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.VehicleType_T">
+              <MappingFragment StoreEntitySet="VehicleType_T">
+                <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicle_User_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.Vehicle_User_T">
+              <MappingFragment StoreEntitySet="Vehicle-User_T">
+                <ScalarProperty Name="VehicleDriverID" ColumnName="VehicleDriverID" />
+                <ScalarProperty Name="FleetCompanyID" ColumnName="FleetCompanyID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="RatePerDay" ColumnName="RatePerDay" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="vehiclegroupname" FunctionName="FleetManagerV2Model.Store.vehiclegroupname" />
+          <EntitySetMapping Name="SparePartAutoBrand_T">
+            <EntityTypeMapping TypeName="FleetManagerV2Model.SparePartAutoBrand_T">
+              <MappingFragment StoreEntitySet="SparePartAutoBrand_T">
+                <ScalarProperty Name="AutoBrandID" ColumnName="AutoBrandID" />
+                <ScalarProperty Name="SparePartID" ColumnName="SparePartID" />
+                <ScalarProperty Name="SparePartAutoBrandID" ColumnName="SparePartAutoBrandID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
